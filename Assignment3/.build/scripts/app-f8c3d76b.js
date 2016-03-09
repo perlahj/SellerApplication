@@ -1,30 +1,27 @@
 "use strict";
 
-angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices", "pascalprecht.translate"])
-.config(function ($routeProvider, $translateProvider) {
-	$routeProvider.when("/seller", {
+var app = angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices", "pascalprecht.translate"]);
+app.config(function ($routeProvider, $translateProvider) {
+	$routeProvider.when("/sellers", {
 		templateUrl: "components/sellers/index.html",
 		controller: "SellersController"
 	}).when("/seller/:id", {
 		templateUrl: "components/seller-details/sellerdetails.html",
 		controller: "SellerDetailsController"
-	}).otherwise({ redirectTo: "/seller"});
+	}).otherwise({ redirectTo: "/sellers"});
 
 
+	$translateProvider.preferredLanguage("is");
 	$translateProvider.useStaticFilesLoader( {
 			prefix: "lang_", //gulp/languages.js eru skrar settar saman i lang_
 			suffix: ".json"
 		});
 
+	$translateProvider.useSanitizeValueStrategy("escape");	
+	$translateProvider.fallbackLanguage("is");
 
-/*
- 	$translateProvider.useStaticFilesLoader( {
- 		prefix: "lang_",
-      	suffix: ".json"
- 	}).fallbackLanguage("en").preferredLanguage("en");
 
-*/
-	//$translateProvider.use("is");
+	
 });
 
 "use strict";
@@ -297,9 +294,9 @@ function SellerDlgController($scope) {
 });
 "use strict";
 
-angular.module("project3App").controller("SellersController", ["$scope", "AppResource", "SellerDlg",
-	/*, centrisNotify, SellerDlg á eftir AppResource*/
-function SellersController($scope, AppResource, SellerDlg) {
+angular.module("project3App").controller("SellersController",
+	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate",
+function SellersController($scope, AppResource, SellerDlg, centrisNotify, $translate) {
 	// TODO: load data from AppResource! Also, add other methods, such as to
 	// add/update sellers etc.
 
@@ -318,7 +315,6 @@ function SellersController($scope, AppResource, SellerDlg) {
 			AppResource.addSeller(seller).success(function(seller, category) {
 				var newSeller = seller;
 				var newCategory = category;
-				//Bæta þessum seljanda í listann!
 				$scope.sellers.push(seller);
 			}).error(function() {
 				/*centrisNotify.error("sellers.Messages.SaveFailed");*/
@@ -326,9 +322,11 @@ function SellersController($scope, AppResource, SellerDlg) {
 		});
 	};
 
-	/*$scope.changeLanguage = function(key) {
-		translate.use(key);
-	};*/
+	$scope.changeLanguage = function(key){
+			console.log("changeLanguage");
+			$translate.use(key);
+	};
+
 }]);
 "use strict";
 
