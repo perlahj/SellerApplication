@@ -82,6 +82,7 @@ function AppResource() {
 		createSeller(3, "Sælgætisgerð Sjonna og Súsí", "Matvörur", "http://i.imgur.com/IuL474x.jpg"),
 		createSeller(4, "Leirkeraverkstæði Lomma", "Keramik", "https://upload.wikimedia.org/wikipedia/commons/6/67/Potter_at_work,_Jaura,_India.jpg")
 	];
+
 	var nextID = 5;
 
 	var mockProducts = [
@@ -172,6 +173,20 @@ function AppResource() {
 
 		getSellerDetails: function(id) {
 			var seller;
+			if(id < nextID){
+				seller = mockSellers[id-1];
+			}
+			if (seller) {
+				return mockHttpPromise(mockResource.successLoadSellerDetails, seller);
+			} else {
+				return mockHttpPromise(false, null);
+			}
+		},
+
+
+		// Þetta fall var gefið en við fengum það ekki til að virka.
+		getSellerDetailsOld: function(id) {
+			var seller;
 			for (var i = 0; i < mockSellers.length; ++i) {
 				if (mockSellers[i].id === id) {
 					seller = mockSellers[i];
@@ -222,41 +237,40 @@ function AppResource() {
 "use strict";
 
 angular.module("project3App").controller("SellerDetailsController", 
-	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate",
-function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, $translate) {
+	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate", "$routeParams", "$location",
+function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, $translate, $routeParams, $location) {
 	
 	$scope.isLoading = true;
+	
+	var sellerId = $routeParams.id;
+
+	AppResource.getSellerDetails(sellerId).success(function(sellerObj) {
+			$scope.seller = sellerObj;
+			$scope.isLoading = false;
+		}).error(function(){
+			$scope.isLoading = false;
+		});
 
 //Virkar ekki
-	AppResource.getSellerDetails($scope.id).success(function(seller, category, id) {
-		$scope.id = id;
-		$scope.seller = seller;
-		$scope.category = category;
-		$scope.isLoading = false;
-	}).error(function() {
-		$scope.isLoading = false;
-	});
-
-//Virkar ekki
-	$scope.onEditSeller = function onEditSeller() {
+	/*$scope.onEditSeller = function onEditSeller(seller) {
+		console.log("seller in edit: " + seller);
 		SellerDlg.show().then(function(seller) {
-			AppResource.updateSeller($scope.id, seller).success(function(seller, category) {
-				var editSeller = seller;
-				var editCategory = category;
+			AppResource.updateSeller(sellerId, seller).success(function(seller) {
+				console.log("Updated seller successfully");
 
 			}).error(function() {
 				//centrisNotify.error("sellers.Messages.SaveFailed");
+				console.log("Error updating seller");
 			});
 		});
-	};
-
-
-	/*$scope.back = function() {
-		$location.path("/seller");
 	};*/
 
+
+	$scope.back = function() {
+		$location.path("/sellers");
+	};
+
 	$scope.changeLanguage = function(key){
-			console.log("changeLanguage");
 			$translate.use(key);
 	};
 }]);
@@ -313,6 +327,8 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 
 	$scope.isLoading = true;
 
+
+
 	AppResource.getSellers().success(function(seller) {
 		$scope.seller = seller;
 		$scope.isLoading = false;
@@ -328,7 +344,7 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 				var newCategory = category;
 				$scope.sellers.push(seller);
 			}).error(function() {
-				/*centrisNotify.error("sellers.Messages.SaveFailed");*/
+				//centrisNotify.error("sellers.Messages.SaveFailed");
 			});
 		});
 	};

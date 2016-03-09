@@ -15,14 +15,14 @@
 		<span translate="sellerdetails.Back" />
 	</button>
 
-	<img src="http://www.jconnect.in/images/prv/hr-manager.png" alt="Picture of seller">
+	<img ng-src="{{seller.imagePath}}" alt="Picture of a seller"/>
 
 	<div>
 		<h2>{{seller.name}}</h2>
 		<h3>{{seller.category}}</h3>
 	</div>
 
-	<button class="btn btn-primary" ng-click="onEditSeller()">
+	<button class="btn btn-primary" ng-click="onEditSeller(seller)">
 		<i class="fa fa-plus" />
 		<span translate="sellerdetails.Edit" />
 	</button>
