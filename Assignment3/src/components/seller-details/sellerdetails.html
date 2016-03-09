@@ -1,4 +1,15 @@
 <div>
+		<!--<label translate="sellers.ChangeLanguage"></label>-->
+	<button class="btn btn-primary" ng-click="changeLanguage('is')">
+		<i class="fa fa-plus" />
+		<span translate="sellers.Icelandic" />
+	</button>
+
+		<button class="btn btn-primary" ng-click="changeLanguage('en')">
+		<i class="fa fa-plus" />
+		<span translate="sellers.English" />
+	</button>
+
 	<button class="btn btn-primary" ng-click="back()">
 		<i class="fa fa-plus" />
 		<span translate="sellerdetails.Back" />
@@ -6,14 +17,15 @@
 
 	<img src="http://www.jconnect.in/images/prv/hr-manager.png" alt="Picture of seller">
 
-	<h2>{{s.name}}</h2>
-	<h3>{{s.category}}</h3>
+	<div>
+		<h2>{{seller.name}}</h2>
+		<h3>{{seller.category}}</h3>
+	</div>
 
 	<button class="btn btn-primary" ng-click="onEditSeller()">
 		<i class="fa fa-plus" />
 		<span translate="sellerdetails.Edit" />
 	</button>
-
 </div>
 
        
