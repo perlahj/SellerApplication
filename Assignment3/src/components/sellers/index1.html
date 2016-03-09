@@ -1,0 +1,37 @@
+<div>
+	<div ng-show="isLoading">
+		<loading-message></loading-message>
+	</div>
+
+	<div ng-hide="isLoading">
+		<button class="btn btn-primary" ng-click="onAddSeller()">
+			<i class="fa fa-plus" />
+			<span translate="sellers.Add" />Add
+		</button>
+		<table>
+			<thead>
+				<tr>
+					<th translate="sellers.Name">Name</th>
+					<th translate="sellers.Category">Category</th>	
+
+					<!-- Ef eitthvað á að vera inn í <th> þa þarf að gera:
+					<th>
+						<i class="fa fa-plus" /> - þetta myndi detta út nema nota:...
+						<span translate="sellers.Name" />
+					</th>
+					<th>
+						<i class="fa fa-plus" /> - þetta myndi detta út nema nota:...
+						<span translate="sellers.Category" />
+					</th>	 -->
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="s in seller">
+					<td>{{s.name}}</td>
+					<td>{{s.category}}</td>
+				</tr>
+			</tbody>
+			<tr></tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<div>
+	<div ng-show="isLoading">
+		<loading-message></loading-message>
+	</div>
+
+	<button class="btn btn-primary" ng-click="onAddSeller()">
+		<i class="fa fa-plus" />
+		<span translate="sellers.Add" />
+	</button>
+
+	<label translate="sellers.ChangeLanguage"></label>
+	<button class="btn btn-primary" ng-click="">
+		<i class="fa fa-plus" />
+		<span translate="sellers.Icelandic" />
+	</button>
+
+		<button class="btn btn-primary" ng-click="">
+		<i class="fa fa-plus" />
+		<span translate="sellers.English" />
+	</button>
+
+	<div ng-hide="isLoading">
+		<table style="width:75%">
+			<thead>
+				<tr>
+					<th translate="sellers.Name"></th>
+					<th translate="sellers.Category"></th>		
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="s in seller">
+					<td><a ng-href="#/seller/{{s.id}}">{{s.name}}</a></td>
+					<td>{{s.category}}</td>
+				</tr>
+			</tbody>
+			<tr></tr>
+		</table>
+	</div>
+</div>

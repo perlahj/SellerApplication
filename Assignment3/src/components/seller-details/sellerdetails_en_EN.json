@@ -1,0 +1,14 @@
+{
+	"sellerdetails" : {
+		"Title":                     "Sellers List",
+		"Name":                      "Name",
+		"Category":					 "Category",
+		"Edit":						 "Edit",
+		"Back":						 "Back",
+		"Messages" : {
+			"LoadFailed":            "Failed to load the list of sellers",
+			"SaveSucceeded":         "The seller has been added successfully",
+			"SaveFailed":            "Unfortunately we could not add a new seller"
+		}
+	}
+}
