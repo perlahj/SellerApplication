@@ -8,6 +8,8 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 
 	$scope.isLoading = true;
 
+
+
 	AppResource.getSellers().success(function(seller) {
 		$scope.seller = seller;
 		$scope.isLoading = false;
@@ -23,7 +25,7 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 				var newCategory = category;
 				$scope.sellers.push(seller);
 			}).error(function() {
-				/*centrisNotify.error("sellers.Messages.SaveFailed");*/
+				//centrisNotify.error("sellers.Messages.SaveFailed");
 			});
 		});
 	};

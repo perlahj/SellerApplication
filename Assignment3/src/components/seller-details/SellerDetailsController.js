@@ -14,7 +14,6 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 			$scope.isLoading = false;
 		}).error(function(){
 			$scope.isLoading = false;
-
 		});
 
 //Virkar ekki
