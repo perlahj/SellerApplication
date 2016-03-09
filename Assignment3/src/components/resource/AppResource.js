@@ -42,6 +42,7 @@ function AppResource() {
 		createSeller(3, "Sælgætisgerð Sjonna og Súsí", "Matvörur", "http://i.imgur.com/IuL474x.jpg"),
 		createSeller(4, "Leirkeraverkstæði Lomma", "Keramik", "https://upload.wikimedia.org/wikipedia/commons/6/67/Potter_at_work,_Jaura,_India.jpg")
 	];
+
 	var nextID = 5;
 
 	var mockProducts = [
@@ -131,6 +132,20 @@ function AppResource() {
 		},
 
 		getSellerDetails: function(id) {
+			var seller;
+			if(id < nextID){
+				seller = mockSellers[id-1];
+			}
+			if (seller) {
+				return mockHttpPromise(mockResource.successLoadSellerDetails, seller);
+			} else {
+				return mockHttpPromise(false, null);
+			}
+		},
+
+
+		// Þetta fall var gefið en við fengum það ekki til að virka.
+		getSellerDetailsOld: function(id) {
 			var seller;
 			for (var i = 0; i < mockSellers.length; ++i) {
 				if (mockSellers[i].id === id) {

@@ -1,20 +1,22 @@
 "use strict";
 
 angular.module("project3App").controller("SellerDetailsController", 
-	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate",
-function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, $translate) {
+	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate", "$routeParams",
+function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, $translate, $routeParams) {
 	
 	$scope.isLoading = true;
+	
+	var sellerId = $routeParams.id;
 
-//Virkar ekki
-	AppResource.getSellerDetails($scope.id).success(function(seller, category, id) {
-		$scope.id = id;
-		$scope.seller = seller;
-		$scope.category = category;
-		$scope.isLoading = false;
-	}).error(function() {
-		$scope.isLoading = false;
-	});
+	AppResource.getSellerDetails(sellerId).success(function(sellerObj) {
+			console.log(sellerObj);
+			$scope.seller = sellerObj;
+			$scope.isLoading = false;
+		}).error(function(){
+			$scope.isLoading = false;
+
+		});
+
 
 //Virkar ekki
 	$scope.onEditSeller = function onEditSeller() {
@@ -35,7 +37,6 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 	};*/
 
 	$scope.changeLanguage = function(key){
-			console.log("changeLanguage");
 			$translate.use(key);
 	};
 }]);
