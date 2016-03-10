@@ -119,6 +119,8 @@ function AppResource() {
 			return mockHttpPromise(mockResource.successAddSeller, seller);
 		},
 
+		defaultSellerPicturePath : "https://pixabay.com/static/uploads/photo/2013/07/13/11/53/best-seller-158885_960_720.png",
+
 		updateSeller: function(id, seller) {
 			if (mockResource.successUpdateSeller) {
 				var current = mockSellers[id-1];
