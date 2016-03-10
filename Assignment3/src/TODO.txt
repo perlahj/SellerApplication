@@ -1,5 +1,24 @@
-TO DO:
+Búið
+X (5%) List individuals
+X (10%) Add/edit individuals
+X (10%) Show details about a given individual
+X (5%) Translated (Höldum áfram að translate-a allt)
+
+Í vinnslu:
+(5%) All input validateds
+
+Product related - viljum klárlega gera þetta:
+(5%) Product directive
+(10%) All products tab
+(5%) Top 10 products tab
+(10%) Add/edit product
+
+Annað: 
+(20%) Unit tests for all code
+(5%) Toastr feedback after add/edit
+(5%) Responsive layout
+(10%) Coolness bonus (gætum grætt nokkur stig með flottu CSS)
 
 
-Lagfæringar:
-Setja ákvena stærð á myndir í sellerDetail
+Lagfæringar sem eru eftir:
+Setja ákveðna stærð á myndir í sellerDetail
