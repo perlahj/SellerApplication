@@ -1,20 +1,45 @@
-<form name="editForm">
-<input type="text"
-	ng-model="seller.name" placeholder="Name">
+<form name="editForm" novalidate ng-submit="onSubmit()">
+	<fieldset>
+		<input type="text"
+			name="name"
+			ng-model="seller.name" 
+			placeholder="{{'seller-dlg.Name' | translate}}"
+			required
+			ng-maxlength="32" />
 
-<input type="text"
-	ng-model="seller.category" placeholder="Category" />
+		<input type="text"
+			name = "category"
+			ng-model="seller.category" 
+			placeholder="{{'seller-dlg.Category' | translate}}"
+			required
+			ng-maxlength="32" />
 
-	<input type="text"
-	ng-model="seller.imagePath" placeholder="Paste image path here..." />
+		<input type="url"
+			name="imagepath"
+			ng-model="seller.imagePath" 
+			placeholder="{{'seller-dlg.Imagepath' | translate}}" 
+			pattern="https?://.+"/>
 
-<button type="submit" class="btn btn-primary" ng-click="onOk()">
-	<i class="fa fa-plus" />
-	<span translate="seller-dlg.Confirm" />
-</button>
+		<div ng-show="editForm.name.$invalid">
+			<small>Name must have at least 1 letter and less than 33 letters</small>
+		</div>
 
-<button class="btn btn-primary" ng-click="onCancel()">
-	<i class="fa fa-plus" />
-	<span translate="seller-dlg.Cancel" />
-</button>
+		<div ng-show="editForm.category.$invalid">
+			<small>Category must at least 1 letter and less than 33 letters</small>
+		</div>
+
+		<div ng-show="editForm.imagepath.$invalid">
+			<small>The image path must start with http://</small>
+		</div>
+
+		<button type="submit" class="btn btn-primary" ng-click="onSubmit()">
+			<i class="fa fa-plus" />
+			<span translate="seller-dlg.Confirm" />
+		</button>
+
+		<button class="btn btn-primary" ng-click="onCancel()">
+			<i class="fa fa-plus" />
+			<span translate="seller-dlg.Cancel" />
+		</button>
+	</fieldset>
 </form>
