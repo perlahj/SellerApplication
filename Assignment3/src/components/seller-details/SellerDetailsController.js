@@ -15,20 +15,11 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 			$scope.isLoading = false;
 		});
 
-//Virkar ekki
-	/*$scope.onEditSeller = function onEditSeller(seller) {
-		console.log("seller in edit: " + seller);
-		SellerDlg.show().then(function(seller) {
-			AppResource.updateSeller(sellerId, seller).success(function(seller) {
-				console.log("Updated seller successfully");
+	$scope.onEditSeller = function onEditSeller(seller) {
+		SellerDlg.edit().then(function(seller) {
 
-			}).error(function() {
-				//centrisNotify.error("sellers.Messages.SaveFailed");
-				console.log("Error updating seller");
-			});
 		});
-	};*/
-
+	};
 
 	$scope.back = function() {
 		$location.path("/sellers");

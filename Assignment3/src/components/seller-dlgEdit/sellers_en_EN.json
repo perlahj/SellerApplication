@@ -4,8 +4,8 @@
 		"Name":                      "Name",
 		"Category":					 "Category",
 		"Add":						 "Add",
+		"Confirm"					 "Confirm",
 		"Cancel":					 "Cancel",
-		"Confirm":					  "Confirm",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of sellers",
 			"SaveSucceeded":         "The seller has been added successfully",

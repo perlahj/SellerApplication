@@ -19,7 +19,5 @@ app.config(function ($routeProvider, $translateProvider) {
 
 	$translateProvider.useSanitizeValueStrategy("escape");	
 	$translateProvider.fallbackLanguage("is");
-
-
 	
 });

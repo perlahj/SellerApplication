@@ -3,12 +3,8 @@
 angular.module("project3App").controller("SellersController",
 	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate",
 function SellersController($scope, AppResource, SellerDlg, centrisNotify, $translate) {
-	// TODO: load data from AppResource! Also, add other methods, such as to
-	// add/update sellers etc.
 
 	$scope.isLoading = true;
-
-
 
 	AppResource.getSellers().success(function(seller) {
 		$scope.seller = seller;
@@ -17,13 +13,10 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 		$scope.isLoading = false;
 	});
 
-	$scope.onAddSeller = function onAddSeller() {
-		
+	// Þurfum að bæta við myndavalmöguleika og setja inn centris tilkynningar
+	$scope.onAddSeller = function onAddSeller() {	
 		SellerDlg.show().then(function(seller) {
 			AppResource.addSeller(seller).success(function(seller, category) {
-				var newSeller = seller;
-				var newCategory = category;
-				$scope.sellers.push(seller);
 			}).error(function() {
 				//centrisNotify.error("sellers.Messages.SaveFailed");
 			});
