@@ -1,7 +1,8 @@
 "use strict";
 
-angular.module("project3App").controller("SellerDlgEditController",
-function SellerDlgEditController($scope, $routeParams, AppResource) {
+angular.module("project3App").controller("SellerDlgEditController", 
+	["$scope", "$routeParams", "AppResource", "centrisNotify",
+function SellerDlgEditController($scope, $routeParams, AppResource, centrisNotify) {
 	
 	var sellerId = $routeParams.id;
 
@@ -26,9 +27,10 @@ function SellerDlgEditController($scope, $routeParams, AppResource) {
 					console.log("Updated seller successfully");
 					console.log(returnedSeller);
 					$scope.seller = returnedSeller;
+					centrisNotify.success("seller-dlg.Messages.EditSucceeded");
 				}).error(function() {
-					//centrisNotify.error("sellers.Messages.SaveFailed");
-					console.log("Error updating seller");
+					centrisNotify.error("seller-dlg.Messages.EditFailed");
+					//console.log("Error updating seller");
 				});
 			$scope.$close($scope.seller);
 		}
@@ -61,5 +63,4 @@ function SellerDlgEditController($scope, $routeParams, AppResource) {
 	$scope.onCancel = function onCancel() {
 		$scope.$dismiss();
 	}; 
-
-});
+}]);
