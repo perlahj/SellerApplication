@@ -14,7 +14,7 @@ Product related - viljum klárlega gera þetta:
 (10%) Add/edit product
 
 Annað: 
-(20%) Unit tests for all code
+(20%) Unit tests for all code. 
 (5%) Toastr feedback after add/edit
 (5%) Responsive layout
 (10%) Coolness bonus (gætum grætt nokkur stig með flottu CSS)
