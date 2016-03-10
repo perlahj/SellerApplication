@@ -5,7 +5,8 @@
 		"Category":					 "Category",
 		"Add":						 "Add",
 		"Cancel":					 "Cancel",
-		"Confirm":					  "Confirm",
+		"Confirm":					 "Confirm",
+		"Imagepath":				 "Image path",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of sellers",
 			"SaveSucceeded":         "The seller has been added successfully",
