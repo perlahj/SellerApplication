@@ -18,6 +18,7 @@ function SellerDlgController($scope) {
 			//Birta validation skilaboð
 			return;
 		}
+		console.log("here in SellerDlgController");
 		$scope.$close($scope.seller);
 	};
 

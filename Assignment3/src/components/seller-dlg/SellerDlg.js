@@ -10,6 +10,14 @@ function SellerDlg($uibModal) {
             });
 
 			return modalInstance.result;
+		},
+		edit: function() {
+			var modalInstance = $uibModal.open( {
+				templateUrl: "components/seller-dlgEdit/seller-dlgEdit.html",
+				controller: "SellerDlgEditController"
+            });
+
+			return modalInstance.result;
 		}
 	};
 });

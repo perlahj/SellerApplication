@@ -19,8 +19,6 @@ app.config(function ($routeProvider, $translateProvider) {
 
 	$translateProvider.useSanitizeValueStrategy("escape");	
 	$translateProvider.fallbackLanguage("is");
-
-
 	
 });
 
@@ -161,6 +159,18 @@ function AppResource() {
 
 		updateSeller: function(id, seller) {
 			if (mockResource.successUpdateSeller) {
+				var current = mockSellers[id-1];
+				if (current !== null) {
+					current.name      = seller.name;
+					current.category  = seller.category;
+					current.imagePath = seller.imagePath;
+				}
+			}
+			return mockHttpPromise(mockResource.successUpdateSeller, seller);
+		},
+
+		updateSellerOld: function(id, seller) {
+			if (mockResource.successUpdateSeller) {
 				var current = _.find(mockSellers, function(o){ return o.id === id;});
 				if (current !== null) {
 					current.name      = seller.name;
@@ -173,7 +183,7 @@ function AppResource() {
 
 		getSellerDetails: function(id) {
 			var seller;
-			if(id < nextID){
+			if(id < nextID && id > 0){
 				seller = mockSellers[id-1];
 			}
 			if (seller) {
@@ -183,8 +193,6 @@ function AppResource() {
 			}
 		},
 
-
-		// Þetta fall var gefið en við fengum það ekki til að virka.
 		getSellerDetailsOld: function(id) {
 			var seller;
 			for (var i = 0; i < mockSellers.length; ++i) {
@@ -251,20 +259,11 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 			$scope.isLoading = false;
 		});
 
-//Virkar ekki
-	/*$scope.onEditSeller = function onEditSeller(seller) {
-		console.log("seller in edit: " + seller);
-		SellerDlg.show().then(function(seller) {
-			AppResource.updateSeller(sellerId, seller).success(function(seller) {
-				console.log("Updated seller successfully");
+	$scope.onEditSeller = function onEditSeller(seller) {
+		SellerDlg.edit().then(function(seller) {
 
-			}).error(function() {
-				//centrisNotify.error("sellers.Messages.SaveFailed");
-				console.log("Error updating seller");
-			});
 		});
-	};*/
-
+	};
 
 	$scope.back = function() {
 		$location.path("/sellers");
@@ -286,9 +285,18 @@ function SellerDlg($uibModal) {
             });
 
 			return modalInstance.result;
+		},
+		edit: function() {
+			var modalInstance = $uibModal.open( {
+				templateUrl: "components/seller-dlgEdit/seller-dlgEdit.html",
+				controller: "SellerDlgEditController"
+            });
+
+			return modalInstance.result;
 		}
 	};
 });
+
 "use strict";
 
 angular.module("project3App").controller("SellerDlgController",
@@ -309,6 +317,52 @@ function SellerDlgController($scope) {
 			//Birta validation skilaboð
 			return;
 		}
+		console.log("here in SellerDlgController");
+		$scope.$close($scope.seller);
+	};
+
+	$scope.onCancel = function onCancel() {
+		$scope.$dismiss();
+	}; 
+
+});
+"use strict";
+
+angular.module("project3App").controller("SellerDlgEditController",
+function SellerDlgEditController($scope, $routeParams, AppResource) {
+	
+	var sellerId = $routeParams.id;
+
+	AppResource.getSellerDetails(sellerId).success(function(sellerObj) {
+			$scope.seller = sellerObj;
+			$scope.isLoading = false;
+			console.log(sellerObj);
+		}).error(function(){
+			$scope.isLoading = false;
+		});
+
+	$scope.onOk = function onOk() {
+		//TODO: validation - þannig að það verði ekki lokað glugganum nema validatist!!
+		
+		if ($scope.seller.name.length === 0 || $scope.seller.category.length === 0) {
+			//Birta validation skilaboð
+			return;
+		}
+		var newSeller = {
+			name : $scope.seller.name,
+			category : $scope.seller.category,
+			imagePath : $scope.seller.imagePath
+		};
+		console.log(newSeller);
+
+		AppResource.updateSeller(sellerId, newSeller).success(function(returnedSeller) {
+				console.log("Updated seller successfully");
+				console.log(returnedSeller);
+				$scope.seller = returnedSeller;
+			}).error(function() {
+				//centrisNotify.error("sellers.Messages.SaveFailed");
+				console.log("Error updating seller");
+			});
 		$scope.$close($scope.seller);
 	};
 
@@ -322,12 +376,8 @@ function SellerDlgController($scope) {
 angular.module("project3App").controller("SellersController",
 	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate",
 function SellersController($scope, AppResource, SellerDlg, centrisNotify, $translate) {
-	// TODO: load data from AppResource! Also, add other methods, such as to
-	// add/update sellers etc.
 
 	$scope.isLoading = true;
-
-
 
 	AppResource.getSellers().success(function(seller) {
 		$scope.seller = seller;
@@ -336,13 +386,10 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 		$scope.isLoading = false;
 	});
 
-	$scope.onAddSeller = function onAddSeller() {
-		
+	// Þurfum að bæta við myndavalmöguleika og setja inn centris tilkynningar
+	$scope.onAddSeller = function onAddSeller() {	
 		SellerDlg.show().then(function(seller) {
 			AppResource.addSeller(seller).success(function(seller, category) {
-				var newSeller = seller;
-				var newCategory = category;
-				$scope.sellers.push(seller);
 			}).error(function() {
 				//centrisNotify.error("sellers.Messages.SaveFailed");
 			});
