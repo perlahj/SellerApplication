@@ -1,15 +1,39 @@
-<input type="text"
-	ng-model="seller.name" placeholder="Name">
+<form name="addForm" novalidate ng-submit="onSubmit()">
+	<fieldset>
+		<input type="text"
+			name="name"
+			ng-model="seller.name" 
+			placeholder="Name" 
+			required
+			ng-maxlength="32"/>
 
-<input type="text"
-	ng-model="seller.category" placeholder="Category" />
+		<input type="text"
+			name="category"
+			ng-model="seller.category" 
+			placeholder="Category"
+			required
+			ng-maxlength="32"/>
 
-<button class="btn btn-primary" ng-click="onOk()">
-	<i class="fa fa-plus" />
-	<span translate="seller-dlg.Add" />
-</button>
+		<!--<input type="text" 
+			name="imagepath" 
+			ng-model="seller.imagepath" />-->
 
-<button class="btn btn-primary" ng-click="onCancel()">
-	<i class="fa fa-plus" />
-	<span translate="seller-dlg.Cancel" />
-</button>
+		<div ng-show="addForm.name.$invalid">
+			<small>Name must have at least 1 letter and less than 33 letters</small>
+		</div>
+
+		<div ng-show="addForm.category.$invalid">
+			<small>Category must at least 1 letter and less than 33 letters</small>
+		</div>
+
+		<button class="btn btn-primary" ng-click="onSubmit()">
+			<i class="fa fa-plus" />
+			<span translate="seller-dlg.Add" />
+		</button>
+
+		<button class="btn btn-primary" ng-click="onCancel()">
+			<i class="fa fa-plus" />
+			<span translate="seller-dlg.Cancel" />
+		</button>
+	</fieldset>
+</form>
