@@ -1,0 +1,5 @@
+TO DO:
+
+
+Lagfæringar:
+Setja ákvena stærð á myndir í sellerDetail
