@@ -12,4 +12,5 @@ typings/
 .grunt/
 _SpecRunner.html
 .idea/
+.build/
 npm-debug.log
