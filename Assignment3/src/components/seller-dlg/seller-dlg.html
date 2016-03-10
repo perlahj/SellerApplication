@@ -14,9 +14,10 @@
 			required
 			ng-maxlength="32"/>
 
-		<!--<input type="text" 
-			name="imagepath" 
-			ng-model="seller.imagepath" />-->
+		<input type="text"
+			name="imagepath"
+			ng-model="seller.imagepath" 
+			placeholder="{{'seller-dlg.Imagepath' | translate}}" />
 
 		<div ng-show="addForm.name.$invalid">
 			<small>Name must have at least 1 letter and less than 33 letters</small>
