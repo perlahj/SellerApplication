@@ -16,7 +16,9 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 	// Þurfum að bæta við myndavalmöguleika og setja inn centris tilkynningar
 	$scope.onAddSeller = function onAddSeller() {	
 		SellerDlg.show().then(function(seller) {
+			console.log(seller);
 			AppResource.addSeller(seller).success(function(seller, category) {
+				console.log("img" + seller.imagePath);
 			}).error(function() {
 				//centrisNotify.error("sellers.Messages.SaveFailed");
 			});
