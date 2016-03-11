@@ -3,8 +3,8 @@ X (5%) List individuals
 X (10%) Add/edit individuals
 X (10%) Show details about a given individual
 X (5%) Translated (Höldum áfram að translate-a allt)
-X (5%) All input validateds
-X (5%) Toastr feedback after add/edit
+X (5%) All input validateds - SELLER hluti
+X (5%) Toastr feedback after add/edit - SELLER hluti
 
 Product related - viljum klárlega gera þetta:
 (5%) Product directive
@@ -12,11 +12,19 @@ Product related - viljum klárlega gera þetta:
 (5%) Top 10 products tab
 (10%) Add/edit product
 
-Annað: 
+Í bið eftir product:
+(5%) All input validateds - Product
+(5%) Toastr feedback after add/edit - Product
+
+Í vinnslu:
 (20%) Unit tests for all code. 
+
+Annað: 
+
 (5%) Responsive layout
 (10%) Coolness bonus (gætum grætt nokkur stig með flottu CSS)
 
-
 Lagfæringar sem eru eftir:
 Setja ákveðna stærð á myndir í sellerDetail
+Hafa tímann á toastr notification styttri
+Setja titil á toastr notidication
