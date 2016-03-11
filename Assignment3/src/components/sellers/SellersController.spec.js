@@ -1,15 +1,25 @@
 "use strict";
 
+describe("SellersController", function() {
+	beforeEach(module("project3App"));
+
+	var ctrl;
+	var scope;
+
+	describe("Language Settings"), function() {
+		beforeEach(inject(function($controller, $rootScope, $translate){
+				scope = $rootScope.$new();
+				ctrl = $controller("SellersController", {
+					$scope: scope,
+					$translate: $translate
+				});
+		}));
+
+		it("the default language should be icelandic", function(){
+			expect($trandlate.use()).toBe("is");
+		})
 
 
-describe("A suite", function() {
-  it("contains spec with an expectation", function() {
-    expect(true).toBe(true);
-  });
-});
-
-
-
-describe("SellersController should be unit tested here", function() {
-	// TODO: add beforeEach/describe/it/etc. functions as appropriate!
+	};
+	
 });
