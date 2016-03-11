@@ -4,6 +4,8 @@ describe("SellerDlgController", function() {
 	beforeEach(module("project3App"));
 	var scope, ctrl;
 
+	var mockFormValid = true;
+
 	describe('', function() {
 		beforeEach(module('pascalprecht.translate', function($translateProvider) {
 			$translateProvider.translations('is', {
