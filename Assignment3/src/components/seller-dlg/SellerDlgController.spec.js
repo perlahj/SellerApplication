@@ -3,8 +3,6 @@
 describe("SellerDlgController", function() {
 	beforeEach(module("project3App"));
 	var scope, ctrl;
-	var mockFormValid = scope.addForm.valid;
-	var mockFormInValid = false;
 
 	describe('', function() {
 		beforeEach(module('pascalprecht.translate', function($translateProvider) {
@@ -23,12 +21,6 @@ describe("SellerDlgController", function() {
 				$scope: scope
 			});
 		}));
-
-		it("should call $scope.close() if the form is valid", function() {
-			var addForm = mockFormValid;
-			scope.onSubmit();
-			expect(scope.close).toHaveBeenCalled();
-		});
 
 		it("should return true", function(){
 			expect(mockFormValid).toBe(true);
