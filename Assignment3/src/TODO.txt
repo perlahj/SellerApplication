@@ -3,10 +3,8 @@ X (5%) List individuals
 X (10%) Add/edit individuals
 X (10%) Show details about a given individual
 X (5%) Translated (Höldum áfram að translate-a allt)
-
-Í bið eftir að product sé tilbúið: 
-(5%) All input validateds - Komið hjá seller en þarf að græja líkja hjá product. 
-(5%) Toastr feedback after add/edit - Komið hjá seller en þarf að græja líka hjá product. 
+X (5%) All input validateds
+X (5%) Toastr feedback after add/edit
 
 Product related - viljum klárlega gera þetta:
 (5%) Product directive
@@ -15,7 +13,7 @@ Product related - viljum klárlega gera þetta:
 (10%) Add/edit product
 
 Annað: 
-(20%) Unit tests for all code.  - Í vinnslu hjá Perlu
+(20%) Unit tests for all code. 
 (5%) Responsive layout
 (10%) Coolness bonus (gætum grætt nokkur stig með flottu CSS)
 
