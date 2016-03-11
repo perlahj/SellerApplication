@@ -11,7 +11,6 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 		$scope.isLoading = false;
 	}).error(function() {
 		$scope.isLoading = false;
-		centrisNotify.error("sellers.Messages.LoadFailed");
 	});
 
 	// Þurfum að bæta við myndavalmöguleika og setja inn centris tilkynningar
@@ -21,17 +20,15 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 				seller.imagePath = AppResource.defaultSellerPicturePath;
 			}
 			AppResource.addSeller(seller).success(function(seller) {
-				centrisNotify.success("sellers.Messages.SaveSucceeded");
 			}).error(function() {
-				//console.log("error here");
-				centrisNotify.error("sellers.Messages.SaveFailed");
+				console.log("error here");
+				//centrisNotify.error("sellers.Messages.SaveFailed");
 			});
 		});
 	};
 
 	$scope.changeLanguage = function(key){
-			console.log("changeLanguage");
-			$translate.use(key);
+		$translate.use(key);
 	};
 
 }]);
