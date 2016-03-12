@@ -19,7 +19,7 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 		};
 		$scope.isLoading = false;
 	}).error(function() {
-		$scope.isLoading = false;
+		$scope.isLoading = false; 
 	});
 
 
