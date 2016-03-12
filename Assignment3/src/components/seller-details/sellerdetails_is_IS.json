@@ -9,6 +9,26 @@
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
 			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
+		},
+		"All":						"Allar vörur",
+		"Top":						"Topp 10"
+	},
+	"products" : {
+		"Title":                     "Vörur",
+		"Name":                      "Nafn",
+		"Category":					 "Flokkur",
+		"Price":					 "Verð",
+		"QuantitySold":				 "Magn Selt",
+		"QuantityInStock":			 "Magn á lager",
+		"ImagePath":				 "Slóð á mynd",
+		"Add":						 "Bæta við vöru",
+		"Edit":						 "Breyta vöru",
+		"Messages" : {
+			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
+			"SaveSucceeded":         "Nýrri vöru hefur verið bætt við",
+			"SaveFailed":            "Því miður tókst ekki að bæta við nýrri vöru",
+			"EditSucceeded":         "Breyting á vöru tókst",
+			"EditFailed":			 "Breyting á vöru tókst ekki"
 		}
 	}
 }
