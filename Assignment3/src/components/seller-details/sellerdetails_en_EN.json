@@ -10,5 +10,23 @@
 			"SaveSucceeded":         "The seller has been added successfully",
 			"SaveFailed":            "Unfortunately we could not add a new seller"
 		}
+	},
+	"products" : {
+		"Title":                     "Products List",
+		"Name":                      "Name",
+		"Category":					 "Category",
+		"Price":					 "Price",
+		"QuantitySold":				 "Quantity sold",
+		"QuantityInStock":			 "Quantity in stock",
+		"ImagePath":				 "Image path",
+		"Add":						 "Add",
+		"Edit":						 "Edit",
+		"Messages" : {
+			"LoadFailed":            "Failed to load the list of products",
+			"SaveSucceeded":         "The product has been added successfully",
+			"SaveFailed":            "Unfortunately we could not add a new seller",
+			"EditSucceeded":         "The product has been edited successfully",
+			"EditFailed":			 "Change on product failed"
+		}
 	}
 }
