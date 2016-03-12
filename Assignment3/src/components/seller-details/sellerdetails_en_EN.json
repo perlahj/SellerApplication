@@ -9,7 +9,9 @@
 			"LoadFailed":            "Failed to load the list of sellers",
 			"SaveSucceeded":         "The seller has been added successfully",
 			"SaveFailed":            "Unfortunately we could not add a new seller"
-		}
+		},
+		"All":						"All products",
+		"Top":						"Top 10"
 	},
 	"products" : {
 		"Title":                     "Products List",
@@ -19,8 +21,8 @@
 		"QuantitySold":				 "Quantity sold",
 		"QuantityInStock":			 "Quantity in stock",
 		"ImagePath":				 "Image path",
-		"Add":						 "Add",
-		"Edit":						 "Edit",
+		"Add":						 "Add product",
+		"Edit":						 "Edit product",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of products",
 			"SaveSucceeded":         "The product has been added successfully",

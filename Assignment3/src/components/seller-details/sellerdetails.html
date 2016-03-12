@@ -26,14 +26,32 @@
 		<i class="fa fa-plus" />
 		<span translate="sellerdetails.Edit" /> 
 	</button>
+	<button class="btn btn-primary" ng-click="onAddProduct()">
+		<i class="fa fa-plus" />
+		<span translate="products.Add" /> 
+	</button>
 </div>
-<product-info>
-EMTPY
-</product-info>   
 <!-- https://angular-ui.github.io/bootstrap/ -->
   <uib-tabset active="activeJustified" justified="true">
-    <uib-tab index="0" heading="All products">Here we display all the products</uib-tab>
-    <uib-tab index="1" heading="Top 10">Top 10 products</uib-tab>
+    <uib-tab index="0" heading="All products" >
+			<product-info info="mockproduct">EMPTY</product-info>
+			<product-info info="mockproduct2">EMPTY2</product-info> 
+			<product-info info="mockproduct3">EMPTY2</product-info> 
+			<product-info info="mockproduct4">EMPTY2</product-info> 
+			<product-info info="mockproduct5">EMPTY2</product-info> 
+			<product-info info="mockproduct6">EMPTY2</product-info> 
+			<product-info info="mockproduct7">EMPTY2</product-info> 
+			<product-info info="mockproduct8">EMPTY2</product-info>
+	</uib-tab>
+    <uib-tab index="1" heading="Top 10">
+			<product-info info="mockproduct">EMPTY</product-info>
+			<product-info info="mockproduct2">EMPTY2</product-info> 
+			<product-info info="mockproduct3">EMPTY2</product-info> 
+			<product-info info="mockproduct4">EMPTY2</product-info> 
+			<product-info info="mockproduct5">EMPTY2</product-info> 
+			<product-info info="mockproduct6">EMPTY2</product-info> 
+			<product-info info="mockproduct7">EMPTY2</product-info> 
+	</uib-tab>
   </uib-tabset>
 
 

@@ -1,29 +1,32 @@
 <!--Upplýsingar sem birtast um productið-->
 
-<!--MUNA TRANSLATE-A
-<i class="fa fa-plus" />
+<!--MUNA SETJA MYND />
 	<span translate="products.Title" />
 -->
-<div id ="ProductBox">
-<p>
-<span translate="products.Name"></span>: {{mockproduct.name}}
-</p>
-
-<p>
-<span translate="products.Category"></span>: {{mockproduct.category}}
-</p>
-
-<p>
-<span translate="products.Price"></span>: {{mockproduct.price}}
-</p>
-
-<p>
-<span translate="products.QuantitySold"></span>: {{mockproduct.quantitySold}}
-</p>
-
-<p>
-<span translate="products.QuantityInStock"></span>: {{mockproduct.quantityInStock}}
-</p>
-
-</div>
-		   
+<div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                    <img id="productPhoto" class="group list-group-image" src={{info.imagePath}} alt="Nopic" />                
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+						<span translate="products.Name"></span>: {{info.name}}</h4>
+                    <p class="group inner list-group-item-text">
+                        <span translate="products.Category"></span>: {{info.category}}</p>
+                    <p class="group inner list-group-item-text">
+                        <span translate="products.QuantitySold"></span>: {{info.quantitySold}}</p>
+                    <p class="group inner list-group-item-text">
+                        <span translate="products.QuantityInStock"></span>: {{info.quantityInStock}}</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                <span translate="products.Price"></span>: {{info.price}}</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <button class="btn btn-success" ng-click="onEditProduct()">
+                                <i class="fa fa-plus" />
+                                <span translate="products.Edit" /> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
