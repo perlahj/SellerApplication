@@ -37,7 +37,8 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 	console.log($scope.products);
 
 	/*testgögn til að gá hvort allt fari í gegnum product.html 
-	og productDirective, á að vera eitt product*/
+	og productDirective, á að vera eitt product, hægt að taka út þegar getsellerproducts byrjar að virka.
+	Þá þarf að láta það sem kemur úr info vera fyrir hvert og eitt product*/
 	$scope.mockproduct = {
 		name: "húfa",
 		category: "föt",
