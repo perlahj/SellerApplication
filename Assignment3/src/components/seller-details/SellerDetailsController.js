@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("project3App").controller("SellerDetailsController", 
+var app = angular.module("project3App").controller("SellerDetailsController", 
 	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate", "$routeParams", "$location",
 function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, $translate, $routeParams, $location) {
 	
@@ -15,7 +15,7 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 			$scope.isLoading = false;
 		});
 
-	$scope.onEditSeller = function onEditSeller(seller) {
+	$scope.onEditSeller = function onEditSeller() {
 		SellerDlg.edit().then(function(seller) {
 
 		});
@@ -28,4 +28,6 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 	$scope.changeLanguage = function(key){
 			$translate.use(key);
 	};
+
 }]);
+

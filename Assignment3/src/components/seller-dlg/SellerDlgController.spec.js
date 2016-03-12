@@ -26,6 +26,6 @@ describe("SellerDlgController", function() {
 
 		it("should return true", function(){
 			expect(mockFormValid).toBe(true);
-		})
+		});
 	});
 });

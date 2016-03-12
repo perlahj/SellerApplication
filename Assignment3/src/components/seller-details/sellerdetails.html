@@ -22,39 +22,17 @@
 		<h3>{{seller.category}}</h3>
 	</div>
 
-	<button class="btn btn-primary" ng-click="onEditSeller(seller)">
+	<button class="btn btn-primary" ng-click="onEditSeller()">
 		<i class="fa fa-plus" />
-		<span translate="sellerdetails.Edit" />
+		<span translate="sellerdetails.Edit" /> 
 	</button>
 </div>
 
-    <object data="b.html"></object> 
-    
-<!--http://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp-->
-<ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-  <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-  <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-</ul>
-
-<div class="tab-content">
-  <div id="home" class="tab-pane fade in active">
-    <h3>HOME</h3>
-    <p>Some content.</p>
-  </div>
-  <div id="menu1" class="tab-pane fade">
-    <h3>Menu 1</h3>
-    <p>Some content in menu 1.</p>
-  </div>
-  <div id="menu2" class="tab-pane fade">
-    <h3>Menu 2</h3>
-    <p>Some content in menu 2.</p>
-  </div>
-</div>
-
+   
 <!-- https://angular-ui.github.io/bootstrap/ -->
   <uib-tabset active="activeJustified" justified="true">
-    <uib-tab index="0" heading="Justified">Justified content</uib-tab>
-    <uib-tab index="1" heading="SJ">Short Labeled Justified content</uib-tab>
-    <uib-tab index="2" heading="Long Justified">Long Labeled Justified content</uib-tab>
+    <uib-tab index="0" heading="All products">Here we display all the products</uib-tab>
+    <uib-tab index="1" heading="Top 10">Top 10 products</uib-tab>
   </uib-tabset>
+
+
