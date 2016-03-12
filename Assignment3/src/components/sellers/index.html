@@ -1,4 +1,6 @@
 <div>
+	<h1>Welcome to the Online Web Store</h1>
+	
 	<div ng-show="isLoading">
 		<loading-message></loading-message>
 	</div>
@@ -9,12 +11,12 @@
 	</button>
 
 	<!--<label translate="sellers.ChangeLanguage"></label>-->
-	<button class="btn btn-primary" ng-click="changeLanguage('is')">
+	<button class="btn btn-primary language-button" ng-click="changeLanguage('is')">
 		<i class="fa fa-plus" />
 		<span translate="sellers.Icelandic" />
 	</button>
 
-		<button class="btn btn-primary" ng-click="changeLanguage('en')">
+		<button class="btn btn-primary language-button" ng-click="changeLanguage('en')">
 		<i class="fa fa-plus" />
 		<span translate="sellers.English" />
 	</button>
