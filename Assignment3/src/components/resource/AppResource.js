@@ -173,10 +173,11 @@ function AppResource() {
 			}
 		},
 
+		//changed id to parseInt(id)
 		getSellerProducts: function getSellerProducts(id) {
 			var products = [];
 			for (var i = 0; i < mockProducts.length; ++i) {
-				if (mockProducts[i].id === id) {
+				if (mockProducts[i].id === parseInt(id)) {
 					products.push(mockProducts[i].product);
 				}
 			}
