@@ -16,15 +16,15 @@ Product related - viljum klárlega gera þetta:
 (5%) All input validateds - Product
 (5%) Toastr feedback after add/edit - Product
 
-Í vinnslu:
-(20%) Unit tests for all code. 
-
 Annað: 
-
+(20%) Unit tests for all code. 
 (5%) Responsive layout
+(5%) All tables sortable
 (10%) Coolness bonus (gætum grætt nokkur stig með flottu CSS)
+When the user views a seller which has no products, the user should be informed about this (but not necessarily using a toastr message! Check out uib-alert from ui-bootstrap for this).
 
 Lagfæringar sem eru eftir:
-Setja ákveðna stærð á myndir í sellerDetail
-Hafa tímann á toastr notification styttri
-Setja titil á toastr notidication
+Setja ákveðna stærð á myndir í sellerDetail.
+Sýna aðeins 1 notification á edit/add.
+Hafa tímann á notification styttri.
+Setja titil á notification.
