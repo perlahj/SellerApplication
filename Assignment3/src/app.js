@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices", "pascalprecht.translate"]);
+var app = angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices", "pascalprecht.translate", "ui.grid"]);
 app.config(function ($routeProvider, $translateProvider) {
 	$routeProvider.when("/sellers", {
 		templateUrl: "components/sellers/index.html",

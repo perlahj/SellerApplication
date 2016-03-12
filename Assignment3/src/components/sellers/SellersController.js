@@ -1,19 +1,28 @@
 "use strict";
 
 angular.module("project3App").controller("SellersController",
-	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate",
+	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate", 
 function SellersController($scope, AppResource, SellerDlg, centrisNotify, $translate) {
 
-	$scope.isLoading = true;
+	$scope.isLoading = true; 
 
-	AppResource.getSellers().success(function(seller) {
-		$scope.seller = seller;
+	AppResource.getSellers().success(function(sellers) {
+		$scope.sellers = sellers;
+		$scope.gridOptions = {
+			data: "sellers",
+			rowHeight: 150,
+			columnDefs:[
+				{field: "name", displayName:"Name", cellTemplate:'<div class="ui-grid-cell-contents"><a href="#/seller/{{row.entity.id}}">{{row.entity.name}}</a></div>'},
+				{field: "category", displayName:"Category"},
+				{field:"imagePath", displayName: "Picture", cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"/></div>'}
+            ]	
+		};
 		$scope.isLoading = false;
 	}).error(function() {
 		$scope.isLoading = false;
 	});
 
-	// Þurfum að bæta við myndavalmöguleika og setja inn centris tilkynningar
+
 	$scope.onAddSeller = function onAddSeller() {	
 		SellerDlg.show().then(function(seller) {
 			if(seller.imagePath === ""){
