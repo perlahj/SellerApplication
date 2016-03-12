@@ -12,9 +12,9 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 			data: "sellers",
 			rowHeight: 150,
 			columnDefs:[
-				{field: "name", displayName:"Name", cellTemplate:'<div class="ui-grid-cell-contents"><a href="#/seller/{{row.entity.id}}">{{row.entity.name}}</a></div>'},
-				{field: "category", displayName:"Category"},
-				{field:"imagePath", displayName: "Picture", cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"/></div>'}
+				{field: "name", headerCellTemplate:"<div>{{'sellers.Name'|translate}}</div>", cellTemplate:'<div class="ui-grid-cell-contents"><a href="#/seller/{{row.entity.id}}">{{row.entity.name}}</a></div>'},
+				{field: "category", headerCellTemplate:"<div>{{'sellers.Category'|translate}}</div>"},
+				{field:"imagePath", headerCellTemplate: "<div>{{'sellers.Picture'|translate}}</div>", cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"/></div>'}
             ]	
 		};
 		$scope.isLoading = false;

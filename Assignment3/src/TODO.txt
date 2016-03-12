@@ -28,3 +28,4 @@ Setja ákveðna stærð á myndir í sellerDetail.
 Sýna aðeins 1 notification á edit/add.
 Hafa tímann á notification styttri.
 Setja titil á notification.
+Færa CSS skrá og endurskýra (átti í smá vandræðum með að tengja hana). 
