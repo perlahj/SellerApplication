@@ -21,6 +21,18 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 
 		});
 	};
+	$scope.onAddProduct = function onAddProduct() {
+		SellerDlg.addP().then(function(seller) {
+
+		});
+	};
+
+	$scope.onEditProduct = function onEditProduct() {
+		SellerDlg.editP().then(function(seller) {
+
+		});
+	};
+
 
 	$scope.back = function() {
 		$location.path("/sellers");

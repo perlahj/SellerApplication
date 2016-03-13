@@ -18,6 +18,22 @@ function SellerDlg($uibModal) {
             });
 
 			return modalInstance.result;
+		},
+		editP: function() {
+			var modalInstance = $uibModal.open( {
+				templateUrl: "components/seller-dlgEdit/editProduct.html",
+				controller: "SellerDlgEditController"
+            });
+
+			return modalInstance.result;
+		},
+		addP: function() {
+			var modalInstance = $uibModal.open( {
+				templateUrl: "components/seller-dlgEdit/addProduct.html",
+				controller: "SellerDlgEditController"
+            });
+
+			return modalInstance.result;
 		}
 	};
 });
