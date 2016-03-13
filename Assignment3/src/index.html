@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html ng-app="project3App">
 <head>
-	<title>WEPO Assignment 3 - Online Web Store</title>
+	<title>Online Web Store</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="src/components/sellers/sellers.css">
 	<link rel="stylesheet" href="styles/vendor.css">
 	<link rel="stylesheet" href="styles/app.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> 
+
 </head>
+	<body >
+		
+		<main class="container-fluid">
+			<div class="Main clearfix" ng-view id="content"></div>
+		</main>
 
-<body >
+		<toaster-container></toaster-container>
 
+		<!-- inject:vendor:js -->
+		<!-- endinject -->
 
-	<main class="container-fluid">
-		<div class="Main clearfix" ng-view id="content"></div>
-	</main>
+		<!-- inject:app:js -->
+		<!-- endinject -->
 
+		<!-- inject:templates:js -->
+		<!-- endinject -->
 
-	<toaster-container></toaster-container>
+		<script type="text/javascript" src="https://rawgithub.com/PascalPrecht/bower-angular-translate-loader-static-files/master/angular-translate-loader-static-files.js"></script>
 
+		<script type="text/javascript" src="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css">
 
-
-
-	<!-- inject:vendor:js -->
-	<!-- endinject -->
-
-	<!-- inject:app:js -->
-	<!-- endinject -->
-
-	<!-- inject:templates:js -->
-	<!-- endinject -->
-
-	
-	<script type="text/javascript" src="https://rawgithub.com/PascalPrecht/bower-angular-translate-loader-static-files/master/angular-translate-loader-static-files.js"></script>
-	
-	
-</body>
-
+	</body>
 </html>
