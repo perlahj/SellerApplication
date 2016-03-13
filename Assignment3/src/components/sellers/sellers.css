@@ -1,11 +1,15 @@
 h1{
- 	text-align: center;
+ 	text-align: left;
  	letter-spacing: 2px;
+}
+
+ h2{
+ 	text-align: left;
  }
  
  .language-button{
  	float: right;
- 	margin: 0px 3px;
+ 	margin: 0px 2px;
  }
  
  .gridStyle{
@@ -15,4 +19,20 @@ h1{
  .gridStyle div img{
  	height: 100px;
  	margin: 2px 2px;
- } 
+ }
+
+ div #sellerPhoto{
+ 	height: 150px;
+ 	width: auto;
+ 	display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+ }
+.tabs{
+	margin: 10px 0px;
+}
+
+.alert-info{
+	margin: 10px 10px;
+}

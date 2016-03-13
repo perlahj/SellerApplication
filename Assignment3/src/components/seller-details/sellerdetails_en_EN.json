@@ -8,10 +8,11 @@
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of sellers",
 			"SaveSucceeded":         "The seller has been added successfully",
-			"SaveFailed":            "Unfortunately we could not add a new seller"
+			"SaveFailed":            "Unfortunately we could not add a new seller",
+			"NoProducts":			"This seller is not selling any products at the moment."
 		},
 		"All":						"All products",
-		"Top":						"Top 10"
+		"Top":						"Top 10 products"
 	},
 	"products" : {
 		"Title":                     "Products List",

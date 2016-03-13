@@ -14,7 +14,8 @@
 			"SaveSucceeded":         "The product has been added successfully",
 			"SaveFailed":            "Unfortunately we could not add a new seller",
 			"EditSucceeded":         "The product has been edited successfully",
-			"EditFailed":			 "Change on product failed"
+			"EditFailed":			 "Change on product failed",
+			"NoProcuts":			 "This seller has no products"
 		}
 	}
 }
