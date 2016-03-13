@@ -185,6 +185,17 @@ function AppResource() {
 			return mockHttpPromise(mockResource.successGetSellerProducts, products);
 		},
 
+		getSellerTopProducts: function getSellerTopProducts(id) {
+			var products = [];
+			for (var i = 0; i < mockProducts.length; ++i) {
+				if (mockProducts[i].id === parseInt(id)) {
+					products.push(mockProducts[i].product);
+				}
+			}
+
+			return mockHttpPromise(mockResource.successGetSellerProducts, products);
+		},
+
 		addSellerProduct: function addSellerProduct(id, product) {
 			var success = false;
 			if (mockResource.successAddSellerProduct) {

@@ -34,4 +34,12 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 	AppResource.getSellerProducts(sellerId).success(function(productObj) {
 			$scope.products = productObj;
 		});
+	//Get top 10 products for seller
+	$scope.topProducts = $scope.products.sort(function(a, b) {
+    return parseFloat(b.quantitySold) - parseFloat(a.quantitySold);
+	});
+	$scope.topProducts = $scope.topProducts.slice(0,10);
+	$scope.products = $scope.products.sort(function(a, b) {
+	   return a.name.localeCompare(b.name);
+	});
 }]);
