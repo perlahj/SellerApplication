@@ -1,17 +1,23 @@
 {
 	"seller-dlg" : {
-		"Title":                     "Sellers List",
-		"Name":                      "Name",
-		"Category":					 "Category",
-		"Add":						 "Add",
-		"Confirm":					 "Confirm",
-		"Cancel":					 "Cancel",
+		"Title":                     	"Sellers List",
+		"Name":                      	"Name",
+		"Category":					 	"Category",
+		"Add":						 	"Add",
+		"Confirm":					 	"Confirm",
+		"Cancel":					 	"Cancel",
 		"Messages" : {
-			"LoadFailed":            "Failed to load the list of sellers",
-			"SaveSucceeded":         "The seller has been added successfully",
-			"SaveFailed":            "Unfortunately we could not add a new seller",
-			"EditSucceeded":         "The seller has been edited successfully",
-			"EditFailed":			 "Change on seller failed"
+			"LoadFailed":   	        "Failed to load the list of sellers",
+			"SaveSucceeded":       	    "The seller has been added successfully",
+			"SaveFailed":            	"Unfortunately we could not add a new seller",
+			"EditSucceeded":         	"The seller has been edited successfully",
+			"EditFailed":			 	"Change on seller failed",
+			"NameValidate":			 	"Name must have at least 1 letter and less than 33 letters",
+			"CategoryValidate":			"Category must at least 1 letter and less than 33 letters",
+			"ImagePathValidate":		"The image path must start with http://",
+			"PriceValidate":			"Price has to be a number and less than 33 digits",
+			"QuantitySoldValidate":		"Quantity sold has to be a number and less than 33 digits",
+			"QuantityInStockValidate":	"Quantity in stock has to be a number and less than 33 digits"
 		}
 	},
 	
