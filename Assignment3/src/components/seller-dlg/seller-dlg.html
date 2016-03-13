@@ -21,15 +21,15 @@
 			pattern="https?://.+"/ />
 
 		<div ng-show="addForm.name.$invalid">
-			<small>Name must have at least 1 letter and less than 33 letters</small>
+			<small><span translate="seller-dlg.Messages.NameValidate" /></small>
 		</div>
 
 		<div ng-show="addForm.category.$invalid">
-			<small>Category must at least 1 letter and less than 33 letters</small>
+			<small><span translate="seller-dlg.Messages.CategoryValidate" /></small>
 		</div>
 
 		<div ng-show="addForm.imagepath.$invalid">
-			<small>The image path must start with http://</small>
+			<small><span translate="seller-dlg.Messages.ImagePathValidate" /></small>
 		</div>
 
 		<button class="btn btn-primary" ng-click="onSubmit()">

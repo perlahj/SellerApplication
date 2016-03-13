@@ -25,6 +25,7 @@ function EditProductController(productParameter, $scope, $routeParams, AppResour
 
 
 	$scope.onSubmitProduct = function onSubmitProduct() {
+		console.log("inside onsubmitproduct");
 		if ($scope.editProductForm.$valid) {	
 			var newProduct = {
 				name : $scope.product.name,
@@ -34,6 +35,7 @@ function EditProductController(productParameter, $scope, $routeParams, AppResour
 			//console.log(newSeller);
 
 			AppResource.updateProduct($scope.product.id, $scope.product).success(function(returnedProduct) {
+					console.log(typeof($scope.product.id));
 					console.log("Updated product successfully");
 					console.log(returnedProduct);
 					$scope.product = returnedProduct;

@@ -6,11 +6,11 @@ X (5%) Translated (Höldum áfram að translate-a allt)
 X (5%) All input validateds - SELLER hluti
 X (5%) Toastr feedback after add/edit - SELLER hluti
 X (5%) All tables sortable
+x(5%) Product directive
+x(10%) All products tab
+x(5%) Top 10 products tab
 
 Product related - viljum klárlega gera þetta:
-(5%) Product directive
-(10%) All products tab
-(5%) Top 10 products tab
 (10%) Add/edit product
 
 Í bið eftir product:
