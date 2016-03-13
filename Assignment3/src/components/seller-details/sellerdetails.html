@@ -26,13 +26,62 @@
 		<i class="fa fa-plus" />
 		<span translate="sellerdetails.Edit" /> 
 	</button>
+	<button class="btn btn-primary" ng-click="onAddProduct()">
+		<i class="fa fa-plus" />
+		<span translate="products.Add" /> 
+	</button>
 </div>
-
-   
 <!-- https://angular-ui.github.io/bootstrap/ -->
   <uib-tabset active="activeJustified" justified="true">
-    <uib-tab index="0" heading="All products">Here we display all the products</uib-tab>
-    <uib-tab index="1" heading="Top 10">Top 10 products</uib-tab>
+    <uib-tab index="0" heading="All products" >
+    	<!--arf að gera einhverskonar loop sem setur nýtt númer í hvert info-->
+			<product-info info="products[0]">EMPTY</product-info>
+			<product-info info="products[1]">EMPTY2</product-info> 
+			<product-info info="products[2]">EMPTY2</product-info>
+			<product-info info="products[3]">EMPTY2</product-info>
+			<product-info info="products[4]">EMPTY2</product-info>
+			<product-info info="products[5]">EMPTY2</product-info>
+			<product-info info="products[6]">EMPTY2</product-info>
+			<product-info info="products[7]">EMPTY2</product-info>
+			<product-info info="products[8]">EMPTY2</product-info>
+			<product-info info="products[9]">EMPTY2</product-info>
+			<product-info info="products[10]">EMPTY2</product-info>
+			<product-info info="products[11]">EMPTY2</product-info>
+			<product-info info="products[10]">EMPTY2</product-info>
+			<product-info info="products[11]">EMPTY2</product-info>
+			<product-info info="products[12]">EMPTY2</product-info>
+			<product-info info="products[13]">EMPTY2</product-info>
+			<product-info info="products[14]">EMPTY2</product-info>
+			<product-info info="products[15]">EMPTY2</product-info>
+			<product-info info="products[16]">EMPTY2</product-info>
+			<product-info info="products[17]">EMPTY2</product-info>
+			<product-info info="products[18]">EMPTY2</product-info>
+			<product-info info="products[19]">EMPTY2</product-info>
+	</uib-tab>
+    <uib-tab index="1" heading="Top 10">
+			<product-info info="products[0]">EMPTY</product-info>
+			<product-info info="products[1]">EMPTY2</product-info> 
+			<product-info info="products[2]">EMPTY2</product-info>
+			<product-info info="products[3]">EMPTY2</product-info>
+			<product-info info="products[4]">EMPTY2</product-info>
+			<product-info info="products[5]">EMPTY2</product-info>
+			<product-info info="products[6]">EMPTY2</product-info>
+			<product-info info="products[7]">EMPTY2</product-info>
+			<product-info info="products[8]">EMPTY2</product-info>
+			<product-info info="products[9]">EMPTY2</product-info>
+			<product-info info="products[10]">EMPTY2</product-info>
+			<product-info info="products[11]">EMPTY2</product-info>
+			<product-info info="products[10]">EMPTY2</product-info>
+			<product-info info="products[11]">EMPTY2</product-info>
+			<product-info info="products[12]">EMPTY2</product-info>
+			<product-info info="products[13]">EMPTY2</product-info>
+			<product-info info="products[14]">EMPTY2</product-info>
+			<product-info info="products[15]">EMPTY2</product-info>
+			<product-info info="products[16]">EMPTY2</product-info>
+			<product-info info="products[17]">EMPTY2</product-info>
+			<product-info info="products[18]">EMPTY2</product-info>
+			<product-info info="products[19]">EMPTY2</product-info>
+	</uib-tab>
   </uib-tabset>
 
 

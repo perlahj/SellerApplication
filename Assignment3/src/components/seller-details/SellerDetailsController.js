@@ -14,6 +14,7 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 		}).error(function(){
 			$scope.isLoading = false;
 		});
+	console.log($scope.seller);
 
 	$scope.onEditSeller = function onEditSeller() {
 		SellerDlg.edit().then(function(seller) {
@@ -29,5 +30,8 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 			$translate.use(key);
 	};
 
+	//Get products for seller
+	AppResource.getSellerProducts(sellerId).success(function(productObj) {
+			$scope.products = productObj;
+		});
 }]);
-
