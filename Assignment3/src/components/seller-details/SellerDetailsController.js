@@ -43,7 +43,15 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 
 		$scope.onEditProduct = function onEditProduct(productObject) {
 			$scope.product = productObject;
-			SellerDlg.editP($scope.product).then(function(product) {});
+			SellerDlg.editP($scope.product).then(function(product) {
+				AppResource.updateProduct($scope.product.id, $scope.product).success(function(returnedProduct) {
+					$scope.product = returnedProduct;
+					centrisNotify.success("seller-dlg.Messages.EditSucceeded");
+				}).error(function() {
+					//centrisNotify.error("seller-dlg.Messages.EditFailed");
+					//console.log("Error updating seller");
+				});
+			});
 		};
 
 

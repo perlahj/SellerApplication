@@ -2,7 +2,7 @@
 
 angular.module("project3App").controller("AddProductController",
 	["$scope", "$routeParams", "AppResource", "SellerDlg",
-function AddProductController($scope, $routeParams, AppResource, SellerDlg) {
+function AddProductController($scope, $routeParams) {
 
 	$scope.sellerId = parseInt($routeParams.id);
  	$scope.product = {
