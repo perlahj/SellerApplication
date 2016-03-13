@@ -1,40 +1,51 @@
-<form name="addForm" novalidate ng-submit="onSubmit()">
+<form name="addProductForm" novalidate ng-submit="onSubmit()">
 	<fieldset>
 		<input type="text"
 			name="name"
-			ng-model="seller.name" 
-			placeholder="{{'seller-dlg.Name' | translate}}"
+			ng-model="product.name" 
+			placeholder="{{'products.Name' | translate}}"
 			required
-			ng-maxlength="32"/>
+			ng-maxlength="32" />
 
 		<input type="text"
-			name="category"
-			ng-model="seller.category" 
-			placeholder="{{'seller-dlg.Category' | translate}}"
+			name="price"
+			ng-model="product.price" 
+			placeholder="{{'products.Price' | translate}}"
 			required
-			ng-maxlength="32"/>
+			ng-maxlength="32" />
+
+		<input type="text"
+			name="quantitySold"
+			ng-model="product.quantitySold" 
+			placeholder="{{'products.QuantitySold' | translate}}"
+			required
+			ng-maxlength="32" />
+
+		<input type="text"
+			name="quantityInStock"
+			ng-model="product.quantityInStock" 
+			placeholder="{{'products.QuantityInStock' | translate}}"
+			required
+			ng-maxlength="32" />
 
 		<input type="url"
 			name="imagepath"
-			ng-model="seller.imagePath" 
-			placeholder="{{'seller-dlg.Imagepath' | translate}}"
-			pattern="https?://.+"/ />
+			ng-model="product.imagePath" 
+			placeholder="{{'products.ImagePath' | translate}}" 
+			pattern="https?://.+"/>
 
-		<div ng-show="addForm.name.$invalid">
+		<div ng-show="editProductForm.name.$invalid">
 			<small>Name must have at least 1 letter and less than 33 letters</small>
 		</div>
 
-		<div ng-show="addForm.category.$invalid">
-			<small>Category must at least 1 letter and less than 33 letters</small>
-		</div>
 
-		<div ng-show="addForm.imagepath.$invalid">
+		<div ng-show="editProductForm.imagepath.$invalid">
 			<small>The image path must start with http://</small>
 		</div>
 
-		<button class="btn btn-primary" ng-click="onSubmit()">
+		<button type="submit" class="btn btn-primary" ng-click="onSubmitProduct()">
 			<i class="fa fa-plus" />
-			<span translate="seller-dlg.Add" />
+			<span translate="seller-dlg.Confirm" />
 		</button>
 
 		<button class="btn btn-primary" ng-click="onCancel()">

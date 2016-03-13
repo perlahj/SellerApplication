@@ -9,9 +9,14 @@ function SellerDlgEditController($scope, $routeParams, AppResource, centrisNotif
 	AppResource.getSellerDetails(sellerId).success(function(sellerObj) {
 			$scope.seller = sellerObj;
 			$scope.isLoading = false;
-			console.log(sellerObj);
+			//console.log(sellerObj);
 		}).error(function(){
 			$scope.isLoading = false;
+		});
+
+	AppResource.getSellerProducts(sellerId).success(function(productsObj) {
+			//console.log($scope.product);
+			$scope.products = productsObj;
 		});
 
 	$scope.onSubmit = function onSubmit() {
@@ -35,7 +40,6 @@ function SellerDlgEditController($scope, $routeParams, AppResource, centrisNotif
 			$scope.$close($scope.seller);
 		}
 	};
-
 		/*//TODO: validation - þannig að það verði ekki lokað glugganum nema validatist!!
 		if ($scope.editForm.$invalid) {	
 			//	if ($scope.seller.name.length === 0 || $scope.seller.category.length === 0) {

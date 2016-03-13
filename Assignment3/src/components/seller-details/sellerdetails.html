@@ -1,21 +1,21 @@
 <div>
 		<!--<label translate="sellers.ChangeLanguage"></label>-->
-	<button class="btn btn-primary language-button" ng-click="changeLanguage('is')">
+	<button class="btn btn-primary" ng-click="changeLanguage('is')">
 		<i class="fa fa-plus" />
 		<span translate="sellers.Icelandic" />
 	</button>
 
-		<button class="btn btn-primary language-button" ng-click="changeLanguage('en')">
+		<button class="btn btn-primary" ng-click="changeLanguage('en')">
 		<i class="fa fa-plus" />
 		<span translate="sellers.English" />
 	</button>
 
-	<button class="btn btn-primar" ng-click="back()">
+	<button class="btn btn-primary" ng-click="back()">
 		<i class="fa fa-plus" />
 		<span translate="sellerdetails.Back" />
 	</button>
 
-	<img id="sellers-pic" ng-src="{{seller.imagePath}}" alt="Picture of a seller"/>
+	<img id="sellerPhoto" ng-src="{{seller.imagePath}}" alt="Picture of a seller"/>
 
 	<div>
 		<h2>{{seller.name}}</h2>

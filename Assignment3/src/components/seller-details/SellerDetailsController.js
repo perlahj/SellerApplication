@@ -14,7 +14,6 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 		}).error(function(){
 			$scope.isLoading = false;
 		});
-	console.log($scope.seller);
 
 	$scope.onEditSeller = function onEditSeller() {
 		SellerDlg.edit().then(function(seller) {
@@ -27,8 +26,10 @@ function SellerDetailsController($scope, AppResource, SellerDlg, centrisNotify, 
 		});
 	};
 
-	$scope.onEditProduct = function onEditProduct() {
-		SellerDlg.editP().then(function(seller) {
+	$scope.onEditProduct = function onEditProduct(productObject) {
+		//console.log("rugl");
+		$scope.product = productObject;
+		SellerDlg.editP($scope.product).then(function(product) {
 
 		});
 	};
