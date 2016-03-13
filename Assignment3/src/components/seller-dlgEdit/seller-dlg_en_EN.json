@@ -22,7 +22,7 @@
 		"QuantitySold":				 "Quantity sold",
 		"QuantityInStock":			 "Quantity in stock",
 		"ImagePath":				 "Image path",
-		"Add":						 "Add",
+		"Add":						 "Add product",
 		"Edit":						 "Edit",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of products",

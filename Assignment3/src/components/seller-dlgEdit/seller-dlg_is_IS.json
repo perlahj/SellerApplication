@@ -22,7 +22,7 @@
 		"QuantitySold":				 "Magn selt",
 		"QuantityInStock":			 "Magn á lager",
 		"ImagePath":				 "Slóð á mynd",
-		"Add":						 "Bæta við",
+		"Add":						 "Bæta við vöru",
 		"Edit":						 "Breyta",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
