@@ -7,21 +7,21 @@
 			required
 			ng-maxlength="32" />
 
-		<input type="text"
+		<input type="number"
 			name="price"
 			ng-model="product.price" 
 			placeholder="{{'products.Price' | translate}}"
 			required
 			ng-maxlength="32" />
 
-		<input type="text"
+		<input type="number"
 			name="quantitySold"
 			ng-model="product.quantitySold" 
 			placeholder="{{'products.QuantitySold' | translate}}"
 			required
 			ng-maxlength="32" />
 
-		<input type="text"
+		<input type="number"
 			name="quantityInStock"
 			ng-model="product.quantityInStock" 
 			placeholder="{{'products.QuantityInStock' | translate}}"
@@ -34,12 +34,12 @@
 			placeholder="{{'products.ImagePath' | translate}}" 
 			pattern="https?://.+"/>
 
-		<div ng-show="editProductForm.name.$invalid">
+		<div ng-show="addProductForm.name.$invalid">
 			<small>Name must have at least 1 letter and less than 33 letters</small>
 		</div>
 
 
-		<div ng-show="editProductForm.imagepath.$invalid">
+		<div ng-show="addProductForm.imagepath.$invalid">
 			<small>The image path must start with http://</small>
 		</div>
 

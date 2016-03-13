@@ -70,7 +70,7 @@ function AppResource() {
 		createProduct(3, 22, "Brjóstsykur",       499, 200, 4900, ""),
 	];
 	// Note: sellers 2 and 4 don't have any products - yet!
-
+	var nextPID = 23;
 	// A helper object which emulates the return value
 	// from the $http service in Angular.
 	var mockHttpPromise = function(condition, data) {
@@ -80,7 +80,7 @@ function AppResource() {
 					fn(data);
 				}
 				return {
-					error: function f() {
+					error: function (f) {
 						if (!condition) {
 							f();
 						}
@@ -101,7 +101,7 @@ function AppResource() {
 		successGetSellerProducts:   true,
 		successAddSellerProduct:    true,
 		successUpdateSellerProduct: true,
-		successAddProduct: 			true,
+		successUpdateProduct: 		true,
 
 		// Below are the real functions this object should support.
 		// The current implementation is of course just a mock
@@ -199,10 +199,12 @@ function AppResource() {
 
 		addSellerProduct: function addSellerProduct(id, product) {
 			var success = false;
+
 			if (mockResource.successAddSellerProduct) {
 				var seller = _.find(mockSellers, function(o){ return o.id === id;});
 				if (seller) {
 					success = true;
+					product.id = nextPID++;
 					mockProducts.push({
 						id: seller.id,
 						product: product

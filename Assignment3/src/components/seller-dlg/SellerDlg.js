@@ -34,8 +34,8 @@ function SellerDlg($uibModal) {
 		},
 		addP: function() {
 			var modalInstance = $uibModal.open( {
-				templateUrl: "components/seller-dlgEdit/editProduct.html",
-				controller: "EditProductController"
+				templateUrl: "components/seller-dlgEdit/addProduct.html",
+				controller: "AddProductController"
             });
 
 			return modalInstance.result;
