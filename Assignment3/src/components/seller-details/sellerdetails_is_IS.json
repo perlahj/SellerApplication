@@ -8,7 +8,8 @@
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
-			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
+			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda",
+			"NoProducts":			"Þessi seljandi er ekki að selja neinar vörur í augnablikinu."
 		},
 		"All":						"Allar vörur",
 		"Top":						"10 söluhæstu vörurnar"

@@ -9,7 +9,7 @@ h1{
  
  .language-button{
  	float: right;
- 	margin: 0px 3px;
+ 	margin: 0px 2px;
  }
  
  .gridStyle{
@@ -31,4 +31,8 @@ h1{
  }
 .tabs{
 	margin: 10px 0px;
+}
+
+.alert-info{
+	margin: 10px 10px;
 }
