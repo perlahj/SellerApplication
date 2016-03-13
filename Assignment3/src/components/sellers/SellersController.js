@@ -1,34 +1,19 @@
 "use strict";
 
 angular.module("project3App").controller("SellersController",
-	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate", 
+	["$scope", "AppResource", "SellerDlg", "centrisNotify", "$translate",
 function SellersController($scope, AppResource, SellerDlg, centrisNotify, $translate) {
 
-	$scope.isLoading = true; 
+	$scope.isLoading = true;
 
-	AppResource.getSellers().success(function(sellers) {
-		$scope.sellers = sellers;
-		$scope.gridOptions = {
-			data: "sellers",
-			rowHeight: 100,
-			columnDefs:[
-				{field: "name", displayName:"Name", cellTemplate:'<div><a href="#/seller/{{row.entity.id}}">{{row.entity.name}}</a></div>'},
-				{field: "category", displayName: "Category"},
-				{field:"imagePath", headerCellTemplate: "<div>{{'sellers.Picture'|translate}}</div>", cellTemplate: "<div><img src='{{COL_FIELD}}'/></div>"}
-            ]
-            // Has translated column heads but then it is not sortable. 
-            /*columnDefs:[
-				{field: "name", sortable: true, headerCellTemplate:"<div>{{'sellers.Name'|translate}}</div>", cellTemplate:'<div class="ui-grid-cell-contents"><a href="#/seller/{{row.entity.id}}">{{row.entity.name}}</a></div>'},
-				{field: "category", sortable: true, headerCellTemplate:"<div>{{'sellers.Category'|translate}}</div>"},
-				{field:"imagePath", headerCellTemplate: "<div>{{'sellers.Picture'|translate}}</div>", cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"/></div>'}
-            ]*/
-		};
+	AppResource.getSellers().success(function(seller) {
+		$scope.seller = seller;
 		$scope.isLoading = false;
 	}).error(function() {
-		$scope.isLoading = false; 
+		$scope.isLoading = false;
 	});
 
-
+	// Þurfum að bæta við myndavalmöguleika og setja inn centris tilkynningar
 	$scope.onAddSeller = function onAddSeller() {	
 		SellerDlg.show().then(function(seller) {
 			if(seller.imagePath === ""){

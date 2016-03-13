@@ -1,21 +1,21 @@
 <div>
 		<!--<label translate="sellers.ChangeLanguage"></label>-->
-	<button class="btn btn-primary language-button" ng-click="changeLanguage('is')">
+	<button class="btn btn-primary" ng-click="changeLanguage('is')">
 		<i class="fa fa-plus" />
 		<span translate="sellers.Icelandic" />
 	</button>
 
-		<button class="btn btn-primary language-button" ng-click="changeLanguage('en')">
+		<button class="btn btn-primary" ng-click="changeLanguage('en')">
 		<i class="fa fa-plus" />
 		<span translate="sellers.English" />
 	</button>
 
-	<button class="btn btn-primar" ng-click="back()">
+	<button class="btn btn-primary" ng-click="back()">
 		<i class="fa fa-plus" />
 		<span translate="sellerdetails.Back" />
 	</button>
 
-	<img id="sellers-pic" ng-src="{{seller.imagePath}}" alt="Picture of a seller"/>
+	<img id="sellerPhoto" ng-src="{{seller.imagePath}}" alt="Picture of a seller"/>
 
 	<div>
 		<h2>{{seller.name}}</h2>
@@ -34,53 +34,14 @@
 <!-- https://angular-ui.github.io/bootstrap/ -->
   <uib-tabset active="activeJustified" justified="true">
     <uib-tab index="0" heading="All products" >
-    	<!--arf að gera einhverskonar loop sem setur nýtt númer í hvert info-->
-			<product-info info="products[0]">EMPTY</product-info>
-			<product-info info="products[1]">EMPTY2</product-info> 
-			<product-info info="products[2]">EMPTY2</product-info>
-			<product-info info="products[3]">EMPTY2</product-info>
-			<product-info info="products[4]">EMPTY2</product-info>
-			<product-info info="products[5]">EMPTY2</product-info>
-			<product-info info="products[6]">EMPTY2</product-info>
-			<product-info info="products[7]">EMPTY2</product-info>
-			<product-info info="products[8]">EMPTY2</product-info>
-			<product-info info="products[9]">EMPTY2</product-info>
-			<product-info info="products[10]">EMPTY2</product-info>
-			<product-info info="products[11]">EMPTY2</product-info>
-			<product-info info="products[10]">EMPTY2</product-info>
-			<product-info info="products[11]">EMPTY2</product-info>
-			<product-info info="products[12]">EMPTY2</product-info>
-			<product-info info="products[13]">EMPTY2</product-info>
-			<product-info info="products[14]">EMPTY2</product-info>
-			<product-info info="products[15]">EMPTY2</product-info>
-			<product-info info="products[16]">EMPTY2</product-info>
-			<product-info info="products[17]">EMPTY2</product-info>
-			<product-info info="products[18]">EMPTY2</product-info>
-			<product-info info="products[19]">EMPTY2</product-info>
+		<div ng-repeat="p in products">
+			<product-info info="p"></product-info>
+		</div>
 	</uib-tab>
     <uib-tab index="1" heading="Top 10">
-			<product-info info="products[0]">EMPTY</product-info>
-			<product-info info="products[1]">EMPTY2</product-info> 
-			<product-info info="products[2]">EMPTY2</product-info>
-			<product-info info="products[3]">EMPTY2</product-info>
-			<product-info info="products[4]">EMPTY2</product-info>
-			<product-info info="products[5]">EMPTY2</product-info>
-			<product-info info="products[6]">EMPTY2</product-info>
-			<product-info info="products[7]">EMPTY2</product-info>
-			<product-info info="products[8]">EMPTY2</product-info>
-			<product-info info="products[9]">EMPTY2</product-info>
-			<product-info info="products[10]">EMPTY2</product-info>
-			<product-info info="products[11]">EMPTY2</product-info>
-			<product-info info="products[10]">EMPTY2</product-info>
-			<product-info info="products[11]">EMPTY2</product-info>
-			<product-info info="products[12]">EMPTY2</product-info>
-			<product-info info="products[13]">EMPTY2</product-info>
-			<product-info info="products[14]">EMPTY2</product-info>
-			<product-info info="products[15]">EMPTY2</product-info>
-			<product-info info="products[16]">EMPTY2</product-info>
-			<product-info info="products[17]">EMPTY2</product-info>
-			<product-info info="products[18]">EMPTY2</product-info>
-			<product-info info="products[19]">EMPTY2</product-info>
+		<div ng-repeat="t in topProducts">
+			<product-info info="t"></product-info>
+		</div>
 	</uib-tab>
   </uib-tabset>
 

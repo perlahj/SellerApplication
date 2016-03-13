@@ -101,6 +101,7 @@ function AppResource() {
 		successGetSellerProducts:   true,
 		successAddSellerProduct:    true,
 		successUpdateSellerProduct: true,
+		successAddProduct: 			true,
 
 		// Below are the real functions this object should support.
 		// The current implementation is of course just a mock
@@ -185,6 +186,17 @@ function AppResource() {
 			return mockHttpPromise(mockResource.successGetSellerProducts, products);
 		},
 
+		getSellerTopProducts: function getSellerTopProducts(id) {
+			var products = [];
+			for (var i = 0; i < mockProducts.length; ++i) {
+				if (mockProducts[i].id === parseInt(id)) {
+					products.push(mockProducts[i].product);
+				}
+			}
+
+			return mockHttpPromise(mockResource.successGetSellerProducts, products);
+		},
+
 		addSellerProduct: function addSellerProduct(id, product) {
 			var success = false;
 			if (mockResource.successAddSellerProduct) {
@@ -199,10 +211,23 @@ function AppResource() {
 			}
 
 			return mockHttpPromise(success, product);
-		}
+		},
 
 		// TODO: the updateProduct() function is left as an exercise to
-		// the reader...
+		updateProduct: function(id, product) {
+			if (mockResource.successUpdateProduct) {
+				var current = mockProducts[id-1];
+				if (current !== null) {
+					current.name      = product.name;
+					current.price  = product.category;
+					current.quantitySold  = product.quantitySold;
+					current.quantityInStock = product.quantityInStock;
+					current.imagePath = product.imagePath;
+				}
+			}
+			return mockHttpPromise(mockResource.successUpdateProduct, product);
+		}
+			// the reader...
 	};
 
 	return mockResource;
