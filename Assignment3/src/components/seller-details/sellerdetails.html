@@ -13,18 +13,17 @@
 		<i class="fa fa-plus" />
 		<span translate="sellerdetails.Back" />
 	</button>
-
-	<img id="sellerPhoto" ng-src="{{seller.imagePath}}" alt="Picture of a seller"/>
-
-	<div>
-		<h2>{{seller.name}}</h2>
-		<h3>{{seller.category}}</h3>
-	</div>
-
 	<button class="btn btn-primary" ng-click="onEditSeller()">
 		<i class="fa fa-plus" />
 		<span translate="sellerdetails.Edit" /> 
 	</button>
+
+	<div>
+		<h1 class="h1">{{seller.name}}</h1>
+		<h2 clas="h2">{{seller.category}}</h2>
+		<img id="sellerPhoto" ng-src="{{seller.imagePath}}" alt="Picture of a seller"/>
+	</div>
+
 	<button class="btn btn-primary" ng-click="onAddProduct()">
 		<i class="fa fa-plus" />
 		<span translate="products.Add" /> 
