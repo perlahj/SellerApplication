@@ -5,7 +5,7 @@ function SellerDlg($uibModal) {
 	return {
 		show: function() {
 			var modalInstance = $uibModal.open( {
-				templateUrl: "components/seller-dlg/seller-dlg.html",
+				templateUrl: "components/dialogs/seller-dlg.html",
 				controller: "SellerDlgController"
             });
 
@@ -13,7 +13,7 @@ function SellerDlg($uibModal) {
 		},
 		edit: function() {
 			var modalInstance = $uibModal.open( {
-				templateUrl: "components/seller-dlgEdit/seller-dlgEdit.html",
+				templateUrl: "components/dialogs/seller-dlgEdit.html",
 				controller: "SellerDlgEditController"
             });
 
@@ -21,7 +21,7 @@ function SellerDlg($uibModal) {
 		},
 		editP: function(productObject) {
 			var modalInstance = $uibModal.open( {
-				templateUrl: "components/seller-dlgEdit/editProduct.html",
+				templateUrl: "components/dialogs/editProduct.html",
 				controller: "EditProductController",
 				 resolve: {
                    productParameter: function () {
@@ -34,7 +34,7 @@ function SellerDlg($uibModal) {
 		},
 		addP: function() {
 			var modalInstance = $uibModal.open( {
-				templateUrl: "components/seller-dlgEdit/addProduct.html",
+				templateUrl: "components/dialogs/addProduct.html",
 				controller: "AddProductController"
             });
 
