@@ -34,9 +34,10 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 				seller.imagePath = AppResource.defaultSellerPicturePath;
 			}
 			AppResource.addSeller(seller).success(function(seller) {
+				centrisNotify.success("sellers.Messages.SaveSucceeded");
 			}).error(function() {
 				console.log("error here");
-				//centrisNotify.error("sellers.Messages.SaveFailed");
+				centrisNotify.error("sellers.Messages.SaveFailed");
 			});
 		});
 	};
