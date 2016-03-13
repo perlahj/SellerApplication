@@ -5,6 +5,7 @@ X (10%) Show details about a given individual
 X (5%) Translated (Höldum áfram að translate-a allt)
 X (5%) All input validateds - SELLER hluti
 X (5%) Toastr feedback after add/edit - SELLER hluti
+X (5%) All tables sortable
 
 Product related - viljum klárlega gera þetta:
 (5%) Product directive
@@ -19,7 +20,6 @@ Product related - viljum klárlega gera þetta:
 Annað: 
 (20%) Unit tests for all code. 
 (5%) Responsive layout
-(5%) All tables sortable
 (10%) Coolness bonus (gætum grætt nokkur stig með flottu CSS)
 When the user views a seller which has no products, the user should be informed about this (but not necessarily using a toastr message! Check out uib-alert from ui-bootstrap for this).
 
