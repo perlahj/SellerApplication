@@ -10,11 +10,11 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 		$scope.sellers = sellers;
 		$scope.gridOptions = {
 			data: "sellers",
-			rowHeight: 150,
+			rowHeight: 100,
 			columnDefs:[
-				{field: "name", displayName:"Name", cellTemplate:'<div class="ui-grid-cell-contents"><a href="#/seller/{{row.entity.id}}">{{row.entity.name}}</a></div>'},
+				{field: "name", displayName:"Name", cellTemplate:'<div><a href="#/seller/{{row.entity.id}}">{{row.entity.name}}</a></div>'},
 				{field: "category", displayName: "Category"},
-				{field:"imagePath", headerCellTemplate: "<div>{{'sellers.Picture'|translate}}</div>", cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"/></div>'}
+				{field:"imagePath", headerCellTemplate: "<div>{{'sellers.Picture'|translate}}</div>", cellTemplate: "<div><img src='{{COL_FIELD}}'/></div>"}
             ]
             // Has translated column heads but then it is not sortable. 
             /*columnDefs:[

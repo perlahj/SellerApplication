@@ -1,7 +1,19 @@
-img {
-    width: 100%;
-    height: auto;
+
+h1{
+	text-align: center;
+	letter-spacing: 2px;
 }
+
 .language-button{
 	float: right;
+	margin: 0px 3px;
+}
+
+.gridStyle{
+	margin: 10px 0px;
+}
+
+.gridStyle div img{
+	height: 100px;
+	margin: 2px 2px;
 }
