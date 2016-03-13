@@ -5,7 +5,7 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 
 		$scope.isLoading = true;
 		$scope.alert = false;
-		var sellerId = $routeParams.id;
+		var sellerId = parseInt($routeParams.id);
 
 
 		AppResource.getSellerDetails(sellerId).success(function(sellerObj) {
@@ -27,7 +27,16 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 			});
 		};
 		$scope.onAddProduct = function onAddProduct() {
-			SellerDlg.addP().then(function(seller) {
+
+			SellerDlg.addP().then(function(product) {
+				AppResource.addSellerProduct(sellerId, product).success(function(returnedProduct) {
+					centrisNotify.success("sellers.Messages.SaveSucceeded");
+					
+					//centrisNotify.success("seller-dlg.Messages.EditSucceeded");
+				}).error(function() {
+					//centrisNotify.error("seller-dlg.Messages.EditFailed");
+					console.log("Error adding product");
+				});
 
 			});
 		};
@@ -55,7 +64,6 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 				}
 				return true;
 			};
-			console.log(isEmpty(productObj));
 			if(isEmpty(productObj)){
 				$scope.alert = true;
 			}
