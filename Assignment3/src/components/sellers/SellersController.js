@@ -35,9 +35,9 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 			}
 			AppResource.addSeller(seller).success(function(seller) {
 				console.log(seller);
+				centrisNotify.success("sellers.Messages.SaveSucceeded");
 			}).error(function() {
-				console.log("error here");
-				//centrisNotify.error("sellers.Messages.SaveFailed");
+				centrisNotify.error("sellers.Messages.SaveFailed");
 			});
 		});
 	};

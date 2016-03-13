@@ -1,4 +1,4 @@
-<form name="editForm" novalidate ng-submit="onSubmit()">
+<form name="editForm" novalidate>
 	<fieldset>
 		<input type="text"
 			name="name"
@@ -6,7 +6,6 @@
 			placeholder="{{'seller-dlg.Name' | translate}}"
 			required
 			ng-maxlength="32" />
-
 		<input type="text"
 			name = "category"
 			ng-model="seller.category" 
