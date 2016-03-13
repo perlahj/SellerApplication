@@ -1,4 +1,6 @@
 <div>
+	<h1 class="h1" translate="sellers.Title"></h1>
+
 	<div ng-show="isLoading">
 		<loading-message></loading-message>
 	</div>
@@ -9,17 +11,22 @@
 	</button>
 
 	<!--<label translate="sellers.ChangeLanguage"></label>-->
-	<button class="btn btn-primary" ng-click="changeLanguage('is')">
+	<button class="btn btn-primary language-button" ng-click="changeLanguage('is')">
 		<i class="fa fa-plus" />
 		<span translate="sellers.Icelandic" />
 	</button>
 
-		<button class="btn btn-primary" ng-click="changeLanguage('en')">
+		<button class="btn btn-primary language-button" ng-click="changeLanguage('en')">
 		<i class="fa fa-plus" />
 		<span translate="sellers.English" />
 	</button>
 
 	<div ng-hide="isLoading">
+
+ 		<!-- NEW TABLE -->
+ 		<div class="gridStyle" ui-grid="gridOptions"></div>
+ 
+ 		<!--  OLD TABLE
 		<table style="width:75%">
 			<thead>
 				<tr>
@@ -35,5 +42,6 @@
 			</tbody>
 			<tr></tr>
 		</table>
+	-->
 	</div>
 </div>
