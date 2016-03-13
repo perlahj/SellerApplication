@@ -11,7 +11,7 @@
 			"SaveFailed":            "Unfortunately we could not add a new seller"
 		},
 		"All":						"All products",
-		"Top":						"Top 10"
+		"Top":						"Top 10 products"
 	},
 	"products" : {
 		"Title":                     "Products List",

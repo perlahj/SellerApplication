@@ -11,7 +11,7 @@
 			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
 		},
 		"All":						"Allar vörur",
-		"Top":						"Topp 10"
+		"Top":						"10 söluhæstu vörurnar"
 	},
 	"products" : {
 		"Title":                     "Vörur",
