@@ -24,6 +24,7 @@ describe("SellerDlgController", function() {
 			});
 		}));
 
+		// A sample test
 		it("should return true", function(){
 			expect(mockFormValid).toBe(true);
 		});
