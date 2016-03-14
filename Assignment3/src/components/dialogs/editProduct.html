@@ -6,6 +6,12 @@
 			placeholder="{{'products.Name' | translate}}"
 			required
 			ng-maxlength="32" />
+		<input type="text"
+			name="category"
+			ng-model="product.category" 
+			placeholder="{{'products.Category' | translate}}"
+			required
+			ng-maxlength="32" />
 
 		<input type="number"
 			name="price"
@@ -38,6 +44,10 @@
 			<small><span translate="seller-dlg.Messages.NameValidate" /></small>
 		</div>
 
+		<div ng-show="addProductForm.category.$invalid">
+			<small><span translate="seller-dlg.Messages.CategoryValidate" /></small>
+		</div>
+
 		<div ng-show="editProductForm.price.$invalid">
 			<small><span translate="seller-dlg.Messages.PriceValidate" /></small>
 		</div>
@@ -53,7 +63,8 @@
 		<div ng-show="editProductForm.imagepath.$invalid">
 			<small><span translate="seller-dlg.Messages.ImagePathValidate" /></small>
 		</div>
-
+		<br/>
+		
 		<button type="submit" class="btn btn-primary" ng-click="onSubmitProduct()">
 			<i class="fa fa-plus" />
 			<span translate="seller-dlg.Confirm" />

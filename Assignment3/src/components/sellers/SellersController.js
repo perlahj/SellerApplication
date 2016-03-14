@@ -34,7 +34,6 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 				seller.imagePath = AppResource.defaultSellerPicturePath;
 			}
 			AppResource.addSeller(seller).success(function(seller) {
-				console.log(seller);
 				centrisNotify.success("sellers.Messages.SaveSucceeded");
 			}).error(function() {
 				centrisNotify.error("sellers.Messages.SaveFailed");

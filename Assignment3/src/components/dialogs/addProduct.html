@@ -1,9 +1,15 @@
-<form name="addProductForm" novalidate ng-submit="onSubmit()">
+<form name="addProductForm" novalidate ng-submit="onSubmitProduct()">
 	<fieldset>
 		<input type="text"
 			name="name"
 			ng-model="product.name" 
 			placeholder="{{'products.Name' | translate}}"
+			required
+			ng-maxlength="32" />
+		<input type="text"
+			name="category"
+			ng-model="product.category" 
+			placeholder="{{'products.Category' | translate}}"
 			required
 			ng-maxlength="32" />
 
@@ -37,6 +43,10 @@
 		<div ng-show="addProductForm.name.$invalid">
 			<small><span translate="seller-dlg.Messages.NameValidate" /></small>
 		</div>
+		
+		<div ng-show="addProductForm.category.$invalid">
+			<small><span translate="seller-dlg.Messages.CategoryValidate" /></small>
+		</div>
 
 		<div ng-show="addProductForm.price.$invalid">
 			<small><span translate="seller-dlg.Messages.PriceValidate" /></small>
@@ -53,7 +63,7 @@
 		<div ng-show="addProductForm.imagepath.$invalid">
 			<small><span translate="seller-dlg.Messages.ImagePathValidate" /></small>
 		</div>
-
+		<br/>
 		<button type="submit" class="btn btn-primary" ng-click="onSubmitProduct()">
 			<i class="fa fa-plus" />
 			<span translate="seller-dlg.Confirm" />

@@ -199,7 +199,23 @@ function AppResource() {
 
 		addSellerProduct: function addSellerProduct(id, product) {
 			var success = false;
+			if (mockResource.successAddSellerProduct) {
+				var seller = mockSellers[id-1];
+				if (seller) {
+					success = true;
+					product.id = nextPID++;
+					mockProducts.push({
+						id: seller.id,
+						product: product
+					});
+				}
+			}
 
+			return mockHttpPromise(success, product);
+		},
+
+		addSellerProductOld: function addSellerProduct(id, product) {
+			var success = false;
 			if (mockResource.successAddSellerProduct) {
 				var seller = _.find(mockSellers, function(o){ return o.id === id;});
 				if (seller) {

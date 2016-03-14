@@ -1,11 +1,7 @@
-<!--Upplýsingar sem birtast um productið-->
-
-<!--MUNA SETJA MYND />
-	<span translate="products.Title" />
--->
+<!--Upplýsingar sem birtast um product-->
 <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
-                    <img id="productPhoto" class="group list-group-image" src={{info.imagePath}} alt="Nopic" />                
+                    <img id="productPhoto" class="group list-group-image" src={{info.imagePath}} alt="{{info.name| translate}}"/>                
                 <div class="caption">
                     <h4 class="group inner list-group-item-heading">
 						<span translate="products.Name"></span>: {{info.name}}</h4>
@@ -21,7 +17,7 @@
                                 <span translate="products.Price"></span>: {{info.price}}</p>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <button class="btn btn-success" ng-click="$parent.onEditProduct(info)">
+                            <button class="btn btn-primary" ng-click="$parent.onEditProduct(info)">
                                 <i class="fa fa-plus" />
                                 <span translate="products.Edit" /> 
                             </button>
@@ -30,3 +26,4 @@
                 </div>
             </div>
         </div>
+    </div>
