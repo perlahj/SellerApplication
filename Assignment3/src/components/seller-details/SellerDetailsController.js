@@ -28,17 +28,6 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 			}
 		});
 
-		//Get top 10 products for seller
-		$scope.topProducts = $scope.products.sort(function(a, b) {
-			return parseFloat(b.quantitySold) - parseFloat(a.quantitySold);
-		});
-		$scope.topProducts = $scope.topProducts.slice(0, 10);
-		
-		// Sort products alphabetically
-		$scope.products = $scope.products.sort(function(a, b) {
-			return a.name.localeCompare(b.name);
-		});
-
 		$scope.onEditSeller = function onEditSeller() {
 			SellerDlg.edit().then(function(seller) {
 				AppResource.updateSeller(sellerId, seller).success(function(returnedSeller) {
@@ -50,6 +39,7 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 
 			});
 		};
+		
 		$scope.onAddProduct = function onAddProduct() {
 			SellerDlg.addP().then(function(product) {
 				AppResource.addSellerProduct(sellerId, product).success(function(returnedProduct) {
@@ -59,15 +49,8 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 					if ($scope.alert === true) {
 						$scope.alert = false;
 					}
-					//Get top 10 products for seller
-					$scope.topProducts = $scope.products.sort(function(a, b) {
-						return parseFloat(b.quantitySold) - parseFloat(a.quantitySold);
-					});
-					$scope.topProducts = $scope.topProducts.slice(0, 10);
-					// Sort products alphabetically
-					$scope.products = $scope.products.sort(function(a, b) {
-						return a.name.localeCompare(b.name);
-					});
+					$scope.getTop10Products();
+					$scope.onSort("name");
 				}).error(function() {
 					centrisNotify.error("products.Messages.SaveFailed");
 				});
@@ -86,14 +69,52 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 			});
 		};
 
-		$scope.onSortByCategory = function(sortingMethod){
-			if(sortingMethod === "category"){
-				$scope.products = $scope.products.sort(function(a, b) {
-						return a.category.localeCompare(b.category);
-					});
-				console.log(sortingMethod);
+		$scope.getTop10Products = function() {
+			//Get top 10 products for seller
+			$scope.topProducts = $scope.products.sort(function(a, b) {
+				return parseFloat(b.quantitySold) - parseFloat(a.quantitySold);
+			});
+			$scope.topProducts = $scope.topProducts.slice(0, 10);
+		}
+
+		$scope.onSort = function(sortingMethod) {
+			switch (sortingMethod) {
+				case "name":
+					{
+						$scope.products = $scope.products.sort(function(a, b) {
+							return a.name.localeCompare(b.name);
+						});
+						break;
+					}
+				case "category":
+					{
+						$scope.products = $scope.products.sort(function(a, b) {
+							return a.category.localeCompare(b.category);
+						});
+						break;
+					}
+				case "price":
+					{
+						$scope.products = $scope.products.sort(function(a, b) {
+							return parseFloat(b.price) - parseFloat(a.price);
+						});
+						break;
+					}
+				case "quantityInStock":
+					{
+						$scope.products = $scope.products.sort(function(a, b) {
+							return parseFloat(b.quantityInStock) - parseFloat(a.quantityInStock);
+						});
+						break;
+					}
 			}
 		};
+
+
+		// Sort products alphabetically
+		$scope.onSort("name");
+		// Get the top 10 products
+		$scope.getTop10Products();
 
 		$scope.back = function() {
 			$location.path("/sellers");
