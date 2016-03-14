@@ -7,7 +7,6 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 		$scope.alert = false;
 		var sellerId = parseInt($routeParams.id);
 
-
 		AppResource.getSellerDetails(sellerId).success(function(sellerObj) {
 			$scope.seller = sellerObj;
 			$scope.isLoading = false;
@@ -34,6 +33,8 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 			return parseFloat(b.quantitySold) - parseFloat(a.quantitySold);
 		});
 		$scope.topProducts = $scope.topProducts.slice(0, 10);
+		
+		// Sort products alphabetically
 		$scope.products = $scope.products.sort(function(a, b) {
 			return a.name.localeCompare(b.name);
 		});
@@ -41,10 +42,10 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 		$scope.onEditSeller = function onEditSeller() {
 			SellerDlg.edit().then(function(seller) {
 				AppResource.updateSeller(sellerId, seller).success(function(returnedSeller) {
-					centrisNotify.success("seller-dlg.Messages.EditSucceeded");
+					centrisNotify.success("sellerdetails.Messages.EditSucceeded");
 					$scope.seller = returnedSeller;
 				}).error(function() {
-					centrisNotify.error("seller-dlg.Messages.EditFailed");
+					centrisNotify.error("sellerdetails.Messages.EditFailed");
 				});
 
 			});
@@ -52,7 +53,7 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 		$scope.onAddProduct = function onAddProduct() {
 			SellerDlg.addP().then(function(product) {
 				AppResource.addSellerProduct(sellerId, product).success(function(returnedProduct) {
-					centrisNotify.success("sellers.Messages.SaveSucceeded");
+					centrisNotify.success("products.Messages.SaveSucceeded");
 					$scope.products.push(returnedProduct);
 					// Update alert
 					if ($scope.alert === true) {
@@ -67,14 +68,9 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 					$scope.products = $scope.products.sort(function(a, b) {
 						return a.name.localeCompare(b.name);
 					});
-
-
-					//centrisNotify.success("seller-dlg.Messages.EditSucceeded");
 				}).error(function() {
-					//centrisNotify.error("seller-dlg.Messages.EditFailed");
-					console.log("Error adding product");
+					centrisNotify.error("products.Messages.SaveFailed");
 				});
-
 			});
 		};
 
@@ -83,13 +79,12 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 			SellerDlg.editP($scope.product).then(function(product) {
 				AppResource.updateProduct($scope.product.id, $scope.product).success(function(returnedProduct) {
 					$scope.product = returnedProduct;
-					//centrisNotify.success("seller-dlg.Messages.EditSucceeded");
+					centrisNotify.success("products.Messages.EditSucceeded");
 				}).error(function() {
-					//centrisNotify.error("seller-dlg.Messages.EditFailed");
+					centrisNotify.error("products.Messages.EditFailed");
 				});
 			});
 		};
-
 
 		$scope.back = function() {
 			$location.path("/sellers");

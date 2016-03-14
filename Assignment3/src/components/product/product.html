@@ -1,11 +1,7 @@
-<!--Upplýsingar sem birtast um productið-->
-
-<!--MUNA SETJA MYND />
-	<span translate="products.Title" />
--->
+<!--Upplýsingar sem birtast um product-->
 <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
-                    <img id="productPhoto" class="group list-group-image" src={{info.imagePath}} alt="Nopic" />                
+                    <img id="productPhoto" class="group list-group-image" src={{info.imagePath}} alt="{{info.name| translate}}"/>                
                 <div class="caption">
                     <h4 class="group inner list-group-item-heading">
 						<span translate="products.Name"></span>: {{info.name}}</h4>
