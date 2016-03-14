@@ -7,7 +7,6 @@ function SellersController($scope, AppResource, SellerDlg, centrisNotify, $trans
 	$scope.isLoading = true;
 
 	AppResource.getSellers().success(function(sellers) {
- 		console.log("getting selers");
  		$scope.sellers = sellers;
  		$scope.gridOptions = {
  			data: "sellers",

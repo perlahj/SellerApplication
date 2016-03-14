@@ -15,6 +15,29 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 			$scope.isLoading = false;
 		});
 
+		//Get products for seller
+		AppResource.getSellerProducts(sellerId).success(function(productObj) {
+			$scope.products = productObj;
+			var isEmpty = function(object) {
+				for (var i in object) {
+					return false;
+				}
+				return true;
+			};
+			if (isEmpty(productObj)) {
+				$scope.alert = true;
+			}
+		});
+
+		//Get top 10 products for seller
+		$scope.topProducts = $scope.products.sort(function(a, b) {
+			return parseFloat(b.quantitySold) - parseFloat(a.quantitySold);
+		});
+		$scope.topProducts = $scope.topProducts.slice(0, 10);
+		$scope.products = $scope.products.sort(function(a, b) {
+			return a.name.localeCompare(b.name);
+		});
+
 		$scope.onEditSeller = function onEditSeller() {
 			SellerDlg.edit().then(function(seller) {
 				AppResource.updateSeller(sellerId, seller).success(function(returnedSeller) {
@@ -27,11 +50,25 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 			});
 		};
 		$scope.onAddProduct = function onAddProduct() {
-
 			SellerDlg.addP().then(function(product) {
 				AppResource.addSellerProduct(sellerId, product).success(function(returnedProduct) {
 					centrisNotify.success("sellers.Messages.SaveSucceeded");
-					
+					$scope.products.push(returnedProduct);
+					// Update alert
+					if ($scope.alert === true) {
+						$scope.alert = false;
+					}
+					//Get top 10 products for seller
+					$scope.topProducts = $scope.products.sort(function(a, b) {
+						return parseFloat(b.quantitySold) - parseFloat(a.quantitySold);
+					});
+					$scope.topProducts = $scope.topProducts.slice(0, 10);
+					// Sort products alphabetically
+					$scope.products = $scope.products.sort(function(a, b) {
+						return a.name.localeCompare(b.name);
+					});
+
+
 					//centrisNotify.success("seller-dlg.Messages.EditSucceeded");
 				}).error(function() {
 					//centrisNotify.error("seller-dlg.Messages.EditFailed");
@@ -46,10 +83,9 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 			SellerDlg.editP($scope.product).then(function(product) {
 				AppResource.updateProduct($scope.product.id, $scope.product).success(function(returnedProduct) {
 					$scope.product = returnedProduct;
-					centrisNotify.success("seller-dlg.Messages.EditSucceeded");
+					//centrisNotify.success("seller-dlg.Messages.EditSucceeded");
 				}).error(function() {
 					//centrisNotify.error("seller-dlg.Messages.EditFailed");
-					//console.log("Error updating seller");
 				});
 			});
 		};
@@ -62,27 +98,5 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 		$scope.changeLanguage = function(key) {
 			$translate.use(key);
 		};
-
-		//Get products for seller
-		AppResource.getSellerProducts(sellerId).success(function(productObj) {
-			$scope.products = productObj;
-			var isEmpty = function(object) {
-				for (var i in object) {
-					return false;
-				}
-				return true;
-			};
-			if(isEmpty(productObj)){
-				$scope.alert = true;
-			}
-		});
-		//Get top 10 products for seller
-		$scope.topProducts = $scope.products.sort(function(a, b) {
-			return parseFloat(b.quantitySold) - parseFloat(a.quantitySold);
-		});
-		$scope.topProducts = $scope.topProducts.slice(0, 10);
-		$scope.products = $scope.products.sort(function(a, b) {
-			return a.name.localeCompare(b.name);
-		});
 	}
 ]);
