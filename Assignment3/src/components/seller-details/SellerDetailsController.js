@@ -39,7 +39,7 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 
 			});
 		};
-		
+
 		$scope.onAddProduct = function onAddProduct() {
 			SellerDlg.addP().then(function(product) {
 				AppResource.addSellerProduct(sellerId, product).success(function(returnedProduct) {
@@ -63,6 +63,8 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 				AppResource.updateProduct($scope.product.id, $scope.product).success(function(returnedProduct) {
 					$scope.product = returnedProduct;
 					centrisNotify.success("products.Messages.EditSucceeded");
+					$scope.getTop10Products();
+					$scope.onSort("name");
 				}).error(function() {
 					centrisNotify.error("products.Messages.EditFailed");
 				});
@@ -75,7 +77,7 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 				return parseFloat(b.quantitySold) - parseFloat(a.quantitySold);
 			});
 			$scope.topProducts = $scope.topProducts.slice(0, 10);
-		}
+		};
 
 		$scope.onSort = function(sortingMethod) {
 			switch (sortingMethod) {
@@ -111,10 +113,11 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 		};
 
 
-		// Sort products alphabetically
-		$scope.onSort("name");
 		// Get the top 10 products
 		$scope.getTop10Products();
+		// Sort products alphabetically
+		$scope.onSort("name");
+		
 
 		$scope.back = function() {
 			$location.path("/sellers");
