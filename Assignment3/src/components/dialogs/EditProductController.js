@@ -8,7 +8,6 @@ function EditProductController(productParameter, $scope, $routeParams) {
 	var sellerId = $routeParams.id;
 
 	$scope.onSubmitProduct = function onSubmitProduct() {
-		console.log("inside onsubmitproduct");
 		if ($scope.editProductForm.$valid) {	
 			$scope.$close($scope.product);
 		}

@@ -86,6 +86,15 @@ var app = angular.module("project3App").controller("SellerDetailsController", ["
 			});
 		};
 
+		$scope.onSortByCategory = function(sortingMethod){
+			if(sortingMethod === "category"){
+				$scope.products = $scope.products.sort(function(a, b) {
+						return a.category.localeCompare(b.category);
+					});
+				console.log(sortingMethod);
+			}
+		};
+
 		$scope.back = function() {
 			$location.path("/sellers");
 		};

@@ -20,12 +20,13 @@ function AppResource() {
 	}
 
 	// Another helper function.
-	function createProduct(sellerid, id, productName, price, quantitySold, quantityInStock, path) {
+	function createProduct(sellerid, id, productName, productCategory, price, quantitySold, quantityInStock, path) {
 		return {
 			id: sellerid,
 			product: {
 				id: id,
 				name: productName,
+				category: productCategory,
 				price: price,
 				quantitySold: quantitySold,
 				quantityInStock: quantityInStock,
@@ -46,28 +47,28 @@ function AppResource() {
 	var nextID = 5;
 
 	var mockProducts = [
-		createProduct(1,  1, "Ullarvettlingar",  1899, 500, 12, "http://i.imgur.com/MZOmRnH.jpg"),
-		createProduct(1,  2, "Ullarsokkar",      2199, 488,  9, "http://i.imgur.com/0XKznD4.jpg?1"),
-		createProduct(1,  3, "Trefill",           999, 600, 23, "http://i.imgur.com/50ivFlC.jpg"),
-		createProduct(1,  4, "Sjal",             2399, 120, 65, "https://farm6.static.flickr.com/5205/5298302908_fb75ed8e0a.jpg"),
-		createProduct(1,  5, "Húfa",             1799, 700, 11, "http://purnahandmade.com/media/catalog/product/cache/1/image/ab49223884317513dca074f3bc642368/p/h/phc_malle_08_orwh.jpg"),
-		createProduct(1,  6, "Bjórvettlingar",   2649,  12, 99, "https://img1.etsystatic.com/050/1/5847299/il_214x170.730058347_mt4x.jpg"),
-		createProduct(1,  7, "Jakki",            4499,  23, 14, "http://www.newmanmayahandicraft.com.np/wp-content/uploads/2015/10/woolen-jacket-with-multicolored-design.jpg"),
-		createProduct(1,  8, "Peysa",            5899, 122,  1, "https://upload.wikimedia.org/wikipedia/commons/7/75/Selburose-sweater.jpg"),
-		createProduct(1,  9, "Lambhúshetta",     2499, 322,  4, "https://upload.wikimedia.org/wikipedia/commons/9/9a/Balaclava_3_hole_black.jpg"),
-		createProduct(1, 10, "Buxur",            4299,  73,  5, ""),
-		createProduct(1, 11, "Grifflur",         1299,  98,  9, ""),
-		createProduct(1, 12, "Teppi",             499, 819, 98, "https://pixabay.com/static/uploads/photo/2015/11/07/14/40/fabric-1031932_960_720.jpg"),
-		createProduct(1, 13, "Sokkar",            499, 991, 23, "https://upload.wikimedia.org/wikipedia/commons/4/42/HandKnittedWhiteLaceSock.jpg"),
-		createProduct(1, 14, "Bindi",             899,  25, 22, ""),
-		createProduct(1, 15, "Slaufa",            499, 552, 54, "https://pixabay.com/static/uploads/photo/2015/04/20/21/39/bow-tie-732289_960_720.jpg"),
-		createProduct(1, 16, "Hnéháir sokkar",   2499,  93, 42, "https://upload.wikimedia.org/wikipedia/commons/c/cf/Argyle_(PSF).png"),
-		createProduct(1, 17, "Barnatrefill",      999,  39, 11, "https://upload.wikimedia.org/wikipedia/commons/a/a4/Well-clothed_baby.jpg"),
-		createProduct(1, 18, "Hneppt peysa",     4499,  19,  9, "https://upload.wikimedia.org/wikipedia/commons/4/4d/1940_Trachtenstrickjacke_anagoria.JPG"),
-		createProduct(1, 19, "Hvítir vettlingar", 499, 241,  0, "https://pixabay.com/static/uploads/photo/2014/05/05/22/15/gloves-338614_960_720.jpg"),
-		createProduct(1, 20, "Úlnliðshlífar",    1499,  34,  0, "https://pixabay.com/static/uploads/photo/2015/11/07/17/20/hands-1032312_960_720.jpg"),
-		createProduct(3, 21, "Kókoskúlur",        499, 100, 5000, "https://upload.wikimedia.org/wikipedia/commons/2/2c/Chokladbollar.jpg"),
-		createProduct(3, 22, "Brjóstsykur",       499, 200, 4900, ""),
+		createProduct(1,  1, "Ullarvettlingar", "Fatnaður", 1899, 500, 12, "http://i.imgur.com/MZOmRnH.jpg"),
+		createProduct(1,  2, "Ullarsokkar","Fatnaður",      2199, 488,  9, "http://i.imgur.com/0XKznD4.jpg?1"),
+		createProduct(1,  3, "Trefill", "Fatnaður",          999, 600, 23, "http://i.imgur.com/50ivFlC.jpg"),
+		createProduct(1,  4, "Sjal", "Fatnaður",            2399, 120, 65, "https://farm6.static.flickr.com/5205/5298302908_fb75ed8e0a.jpg"),
+		createProduct(1,  5, "Húfa", "Fatnaður",            1799, 700, 11, "http://purnahandmade.com/media/catalog/product/cache/1/image/ab49223884317513dca074f3bc642368/p/h/phc_malle_08_orwh.jpg"),
+		createProduct(1,  6, "Bjórvettlingar", "Fatnaður",  2649,  12, 99, "https://img1.etsystatic.com/050/1/5847299/il_214x170.730058347_mt4x.jpg"),
+		createProduct(1,  7, "Jakki", "Fatnaður",           4499,  23, 14, "http://www.newmanmayahandicraft.com.np/wp-content/uploads/2015/10/woolen-jacket-with-multicolored-design.jpg"),
+		createProduct(1,  8, "Peysa", "Fatnaður",           5899, 122,  1, "https://upload.wikimedia.org/wikipedia/commons/7/75/Selburose-sweater.jpg"),
+		createProduct(1,  9, "Lambhúshetta", "Fatnaður",    2499, 322,  4, "https://upload.wikimedia.org/wikipedia/commons/9/9a/Balaclava_3_hole_black.jpg"),
+		createProduct(1, 10, "Buxur", "Fatnaður",           4299,  73,  5, ""),
+		createProduct(1, 11, "Grifflur", "Fatnaður",        1299,  98,  9, ""),
+		createProduct(1, 12, "Teppi", "Fatnaður",            499, 819, 98, "https://pixabay.com/static/uploads/photo/2015/11/07/14/40/fabric-1031932_960_720.jpg"),
+		createProduct(1, 13, "Sokkar", "Fatnaður",           499, 991, 23, "https://upload.wikimedia.org/wikipedia/commons/4/42/HandKnittedWhiteLaceSock.jpg"),
+		createProduct(1, 14, "Bindi", "Fatnaður",            899,  25, 22, ""),
+		createProduct(1, 15, "Slaufa", "Fatnaður",           499, 552, 54, "https://pixabay.com/static/uploads/photo/2015/04/20/21/39/bow-tie-732289_960_720.jpg"),
+		createProduct(1, 16, "Hnéháir sokkar", "Fatnaður",   2499,  93, 42, "https://upload.wikimedia.org/wikipedia/commons/c/cf/Argyle_(PSF).png"),
+		createProduct(1, 17, "Barnatrefill", "Fatnaður",     999,  39, 11, "https://upload.wikimedia.org/wikipedia/commons/a/a4/Well-clothed_baby.jpg"),
+		createProduct(1, 18, "Hneppt peysa", "Fatnaður",    4499,  19,  9, "https://upload.wikimedia.org/wikipedia/commons/4/4d/1940_Trachtenstrickjacke_anagoria.JPG"),
+		createProduct(1, 19, "Hvítir vettlingar","Fatnaður", 499, 241,  0, "https://pixabay.com/static/uploads/photo/2014/05/05/22/15/gloves-338614_960_720.jpg"),
+		createProduct(1, 20, "Úlnliðshlífar", "Fatnaður",    1499,  34,  0, "https://pixabay.com/static/uploads/photo/2015/11/07/17/20/hands-1032312_960_720.jpg"),
+		createProduct(3, 21, "Kókoskúlur", "Fatnaður",        499, 100, 5000, "https://upload.wikimedia.org/wikipedia/commons/2/2c/Chokladbollar.jpg"),
+		createProduct(3, 22, "Brjóstsykur", "Fatnaður",       499, 200, 4900, ""),
 	];
 	// Note: sellers 2 and 4 don't have any products - yet!
 	var nextPID = 23;
@@ -237,6 +238,7 @@ function AppResource() {
 				var current = mockProducts[id-1];
 				if (current !== null) {
 					current.name      = product.name;
+					current.category = product.category;
 					current.price  = product.category;
 					current.quantitySold  = product.quantitySold;
 					current.quantityInStock = product.quantityInStock;
