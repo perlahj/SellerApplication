@@ -24,6 +24,7 @@
 		"ImagePath":				 "Slóð á mynd",
 		"Add":						 "Bæta við vöru",
 		"Edit":						 "Breyta vöru",
+		"SortBy":					 "Raða vörum eftir",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
 			"SaveSucceeded":         "Nýrri vöru hefur verið bætt við",

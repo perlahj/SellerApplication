@@ -24,6 +24,7 @@
 		"ImagePath":				 "Image path",
 		"Add":						 "Add product",
 		"Edit":						 "Edit product",
+		"SortBy":					 "Sort Products By",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of products",
 			"SaveSucceeded":         "The product has been added successfully",
