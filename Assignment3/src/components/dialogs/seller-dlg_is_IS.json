@@ -1,16 +1,41 @@
 {
 	"seller-dlg" : {
-		"Title":                     "Seljendur",
+		"Title":                    	"Seljendur",
+		"Name":                 	    "Nafn",
+		"Category":						"Flokkur",
+		"Add":							"Bæta við",
+		"Cancel":						"Hætta við",
+		"Confirm":						"Staðfesta",
+		"Messages" : {
+			"LoadFailed":            	"Ekki tókst að sækja lista yfir seljendur",
+			"SaveSucceeded":         	"Nýjum seljanda hefur verið bætt við",
+			"SaveFailed":            	"Því miður tókst ekki að bæta við nýjum seljanda",
+			"EditSucceeded":         	"Breyting á seljanda tókst",
+			"EditFailed":			 	"Breyting á seljanda tókst ekki",
+			"NameValidate":			 	"Nafn verður að hafa að minnsta kosti 1 staf og færri en 33 stafi",
+			"CategoryValidate":			"Flokkur verður að hafa að minnsta kosti 1 staf og færri en 33 stafi",
+			"ImagePathValidate":		"Slóð myndarinnar verður að byrja á http://",
+			"PriceValidate":			"Verð verður að vera tala minni en 33 tölustafir",
+			"QuantitySoldValidate":		"Magn selt verður að vera tala minni en 33 tölustafir",
+			"QuantityInStockValidate":	"Magn á lager verður að vera tala minni en 33 tölustafir"
+		}
+	},
+	
+	"products" : {
 		"Name":                      "Nafn",
 		"Category":					 "Flokkur",
-		"Add":						 "Bæta við",
-		"Cancel":					 "Hætta við",
-		"Confirm":					 "Staðfesta",
-		"Imagepath":				 "Slóð á mynd",
+		"Price":					 "Verð",
+		"QuantitySold":				 "Magn selt",
+		"QuantityInStock":			 "Magn á lager",
+		"ImagePath":				 "Slóð á mynd",
+		"Add":						 "Bæta við vöru",
+		"Edit":						 "Breyta",
 		"Messages" : {
-			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
-			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
-			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
+			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
+			"SaveSucceeded":         "Nýrri vöru hefur verið bætt við",
+			"SaveFailed":            "Því miður tókst ekki að bæta við nýrri vöru",
+			"EditSucceeded":         "Breyting á vöru tókst",
+			"EditFailed":			 "Breyting á vöru tókst ekki"
 		}
 	}
 }

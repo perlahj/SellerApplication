@@ -1,16 +1,41 @@
 {
 	"seller-dlg" : {
-		"Title":                     "Sellers List",
+		"Title":                     	"Sellers List",
+		"Name":                      	"Name",
+		"Category":					 	"Category",
+		"Add":						 	"Add",
+		"Confirm":					 	"Confirm",
+		"Cancel":					 	"Cancel",
+		"Messages" : {
+			"LoadFailed":   	        "Failed to load the list of sellers",
+			"SaveSucceeded":       	    "The seller has been added successfully",
+			"SaveFailed":            	"Unfortunately we could not add a new seller",
+			"EditSucceeded":         	"The seller has been edited successfully",
+			"EditFailed":			 	"Change on seller failed",
+			"NameValidate":			 	"Name must have at least 1 letter and less than 33 letters",
+			"CategoryValidate":			"Category must at least 1 letter and less than 33 letters",
+			"ImagePathValidate":		"The image path must start with http://",
+			"PriceValidate":			"Price has to be a number and less than 33 digits",
+			"QuantitySoldValidate":		"Quantity sold has to be a number and less than 33 digits",
+			"QuantityInStockValidate":	"Quantity in stock has to be a number and less than 33 digits"
+		}
+	},
+	
+	"products" : {
 		"Name":                      "Name",
 		"Category":					 "Category",
-		"Add":						 "Add",
-		"Cancel":					 "Cancel",
-		"Confirm":					 "Confirm",
-		"Imagepath":				 "Image path",
+		"Price":					 "Price",
+		"QuantitySold":				 "Quantity sold",
+		"QuantityInStock":			 "Quantity in stock",
+		"ImagePath":				 "Image path",
+		"Add":						 "Add product",
+		"Edit":						 "Edit",
 		"Messages" : {
-			"LoadFailed":            "Failed to load the list of sellers",
-			"SaveSucceeded":         "The seller has been added successfully",
-			"SaveFailed":            "Unfortunately we could not add a new seller"
+			"LoadFailed":            "Failed to load the list of products",
+			"SaveSucceeded":         "The product has been added successfully",
+			"SaveFailed":            "Unfortunately we could not add a new seller",
+			"EditSucceeded":         "The product has been edited successfully",
+			"EditFailed":			 "Change on product failed"
 		}
 	}
 }
