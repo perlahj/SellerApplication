@@ -6,6 +6,7 @@
 		"Add":						 	"Add",
 		"Confirm":					 	"Confirm",
 		"Cancel":					 	"Cancel",
+		"Imagepath":					"Image path",
 		"Messages" : {
 			"LoadFailed":   	        "Failed to load the list of sellers",
 			"SaveSucceeded":       	    "The seller has been added successfully",
